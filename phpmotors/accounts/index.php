@@ -107,7 +107,7 @@
 
             // Check for any missing data.
             if(empty($clientEmail) || empty($checkPassword)) {
-                var_dump( $checkPassword);
+                // var_dump( $checkPassword);
                 $_SESSION['message'] = '<p>Please provide valid email address and password.</p>';
                 include '../view/login.php';
                 exit; 
