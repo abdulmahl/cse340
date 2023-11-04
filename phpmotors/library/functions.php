@@ -1,5 +1,4 @@
 <?php
-
     //? This function will check the value of the $clientEmail
     //? variable after it is sanitized, to check if the email
     //? passed looks valid.
