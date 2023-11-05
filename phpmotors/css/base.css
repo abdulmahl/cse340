@@ -82,6 +82,66 @@ div#headerWrap {
 .serverTitle {
     padding: .7rem 1rem 0rem;
 }
+/* Hamburger button  */
+.burger {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    background: transparent;
+    cursor: pointer;
+    display: block;
+}
+
+.burger input, .menuBtn {
+    display: none;
+}
+
+.burger span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--blue2);
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+    top: 0px;
+    transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+    top: 100%;
+    transform-origin: left center;
+    transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 0px;
+    left: 5px;
+}
+  
+.burger input:checked ~ span:nth-of-type(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 28px;
+    left: 5px;
+}
 
 .hamBtnWrap {
     background-color: var(--gray1);
@@ -90,13 +150,6 @@ div#headerWrap {
     height: 3rem;
     width: 99%;
     margin: 0 auto;
-}
-
-.line-1, .line-2, .line-3 {
-    width: 35px;
-    height: 3px;
-    background-color: var(--gray3);
-    margin: 5px;
 }
 
 nav ul {

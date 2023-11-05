@@ -20,7 +20,10 @@
         </header>
 
         <div class="hamBtnWrap">
-            <div id="hamBtn"> <?php echo $hamBtn; ?> </div>
+            <label class="burger" for="hamBtn"><div class="menuBtn">Menu</div>
+                <input name="hamburgerBtn" title="Hamburger Button" type="checkbox" id="hamBtn">
+                <?php echo $hamBtn; ?>
+            </label>
         </div>
 
         <nav id="primaryNav">
