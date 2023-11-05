@@ -61,12 +61,13 @@ img#logo {
 }
 
 .accWrap {
-    margin-left: 3.7rem;
+    margin-right: .5rem;
 }
 
 div#headerWrap {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 1.5rem;
 }
 
@@ -90,6 +91,8 @@ div#headerWrap {
     background: transparent;
     cursor: pointer;
     display: block;
+    margin-left: auto;
+    right: 3%;
 }
 
 .burger input, .menuBtn {
@@ -104,7 +107,6 @@ div#headerWrap {
     background: var(--blue2);
     border-radius: 9px;
     opacity: 1;
-    left: 0;
     transform: rotate(0deg);
     transition: .25s ease-in-out;
 }
@@ -145,21 +147,20 @@ div#headerWrap {
 
 .hamBtnWrap {
     background-color: var(--gray1);
-    padding-left: 21rem;
-    padding-top: .5rem;
-    height: 3rem;
+    padding-top: .9rem;
+    height: 3.7rem;
     width: 99%;
     margin: 0 auto;
+    border-bottom: 1px solid var(--gray3);
 }
 
 nav ul {
     list-style: none;
     background: var(--gray1);
-    padding: 1.5rem .5rem;
 }
 
 nav ul li {
-    padding: 1.3rem 0;
+    padding: 1.5rem 0;
     font-size: 1.3rem;
     border-bottom: 1px solid var(--gray3);
 }
@@ -172,6 +173,10 @@ nav ul a {
 
 nav ul li:hover {
     background: var(--blue1);
+}
+
+nav ul li a:hover {
+    color: var(--gray1);
 }
 
 #primaryNav {
