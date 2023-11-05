@@ -19,8 +19,8 @@
     // var_dump($classifications);
     // exit;
 
-    //? build hamburger button.
-    $hamBtn = '<div class="line-1"> </div> <div class="line-2"> </div> <div class="line-3"> </div>';
+    //? build dynamic hamburger button.
+    $hamBtn = '<span></span> <span></span> <span></span>';
 
     //? Build a navigation bar using the $classifications array.
     $navList = '<ul>';
