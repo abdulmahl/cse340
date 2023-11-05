@@ -540,10 +540,11 @@ a.welcome:hover {
     font-size: 1.7rem;
 }
 
-.levelClientLink {
+a.levelClientLink {
     color: var(--gray1);
     margin-left: .5rem;
     padding: .5rem 0 1rem;
+    font-size: 1.7rem;
 }
 
 .levelClientLink:hover {
