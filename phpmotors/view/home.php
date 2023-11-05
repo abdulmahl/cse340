@@ -27,7 +27,6 @@
             </label>
         </div>
 
-        
         <nav id="primaryNav">
             <?php
                 echo $navList;
