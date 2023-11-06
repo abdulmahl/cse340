@@ -7,6 +7,8 @@
     //? Get the database connection file. 
     require_once '../library/connections.php';
 
+    require_once '../library/functions.php';
+
     //? Get the PHP Motors Model for use when needed.
     require_once '../model/main-model.php';
 
@@ -43,6 +45,9 @@
 
     // echo $classificationList;
     // exit;
+
+    // $classificationList = buildClassificationList($classifications);
+    // var_dump($classificationList);
 
     $action = filter_input(INPUT_POST, 'action');
     if($action == NULL) {
@@ -113,6 +118,15 @@
             }
         break;
 
+        case 'getInventoryItems': 
+            // Get the classificationId 
+            $classificationId = filter_input(INPUT_GET, 'classificationId', FILTER_SANITIZE_NUMBER_INT); 
+            // Fetch the vehicles by classificationId from the DB 
+            $inventoryArray = getInventoryByClassification($classificationId); 
+            // Convert the array to a JSON object and send it back 
+            echo json_encode($inventoryArray); 
+        break;
+
         case 'classification':
             include '../view/addclassification.php';
         break;
@@ -122,7 +136,10 @@
         break;
 
         default:
+            $classificationList = buildClassificationList($classifications);
+            // var_dump($classificationList);
             include '../view/vehiclemanager.php';
+            exit;
         break;
     }
 ?>

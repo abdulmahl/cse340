@@ -38,8 +38,8 @@
             <?php require $_SERVER['DOCUMENT_ROOT'].'/phpmotors/snippets/footer.php'; ?>
         </footer>
     </div>
-<script src="scripts/index.js" defer></script>
-<script src="/phpmotors/scripts/date-time.js" defer></script>
+<script src="scripts/index.js"></script>
+<script src="/phpmotors/scripts/date-time.js"></script>
 
 </body>
 </html>

@@ -47,7 +47,7 @@
             ?>
         </footer>
     </div>
-    <script src="/phpmotors/scripts/index.js" defer></script>
-    <script src="/phpmotors/scripts/date-time.js" defer></script>
+    <script src="/phpmotors/scripts/index.js"></script>
+    <script src="/phpmotors/scripts/date-time.js"></script>
 </body>
 </html>

@@ -107,7 +107,7 @@
         </footer>
       
     </div>
-<script src="scripts/index.js"></script>
-<script src="scripts/date-time.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/date-time.js"></script>
 </body>
 </html>
