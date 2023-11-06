@@ -596,3 +596,19 @@ a.delete:hover {
 td {
     padding: .7rem 0;
 }
+
+.enable-js {
+    font-size: 1rem;
+    padding: 1rem 0;
+}
+
+h1.update-vehicle {
+    text-align: center;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+textarea {
+    padding: .5rem .3rem;
+    text-align: center;
+}

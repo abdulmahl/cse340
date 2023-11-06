@@ -127,6 +127,16 @@
             echo json_encode($inventoryArray); 
         break;
 
+        case 'mod':
+            $invId = filter_input(INPUT_GET, 'invId', FILTER_VALIDATE_INT);
+            $invInfo = getInvItemInfo($invId);
+            if(count($invInfo) < 1) {
+                $message = '<p>Sorry, no vehicle infornation could be found</p>';
+            }
+            include '../view/update-vehicle.php';
+            exit;
+        break;
+
         case 'classification':
             include '../view/addclassification.php';
         break;
@@ -134,6 +144,10 @@
         case 'vehicle':
             include '../view/addvehicle.php';
         break;
+
+        case 'updateVehicle':
+            include '../view/update-vehicle.php';
+            break;
 
         default:
             $classificationList = buildClassificationList($classifications);

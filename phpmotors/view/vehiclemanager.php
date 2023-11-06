@@ -62,7 +62,7 @@
                     ?>
 
                     <noscript>
-                    <p><strong>JavaScript Must Be Enabled to Use this Page.</strong></p>
+                    <p class="enable-js"><strong>JavaScript Must Be Enabled to Use this Page.</strong></p>
                     </noscript>
 
                     <table id="inventoryDisplay"></table>
