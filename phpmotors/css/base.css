@@ -559,3 +559,40 @@ a.levelClientLink {
 .adminMain {
     padding-bottom: 1rem;
 }
+
+.heading {
+    padding: 1rem ;
+}
+
+.choose {
+    font-size: 1.1rem;
+}
+
+#classificationList {
+    padding: .75rem;
+    margin-top: .7rem;
+    font-size: 1.1rem;
+}
+
+.vName {
+    text-align: left;
+}
+
+a.delete, .modify {
+    color: var(--gray1);
+    padding-left: 1.9rem;
+}
+
+a.modify:hover {
+    text-decoration: none;
+    color: #008000;
+}
+
+a.delete:hover {
+    text-decoration: none;
+    color: #ff0000;
+}
+
+td {
+    padding: .7rem 0;
+}

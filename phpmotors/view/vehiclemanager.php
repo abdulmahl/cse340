@@ -49,23 +49,25 @@
                     <a href="/phpmotors/vehicles/?action=classification">Add a classification</a>
                 </div>
 
-                <?php
-                    if (isset($message)) { 
-                    echo $message; 
-                    } 
-                    if (isset($classificationList)) { 
-                    echo '<h2>Vehicles By Classification</h2>'; 
-                    echo '<p>Choose a classification to see those vehicles</p>'; 
-                    echo $classificationList; 
-                    }
-                ?>
+                <div class="heading">
+                    <?php
+                        if (isset($message)) { 
+                        echo $message; 
+                        } 
+                        if (isset($classificationList)) { 
+                        echo '<h2>Vehicles By Classification</h2>'; 
+                        echo '<p class="choose">Choose a classification to see those vehicles</p>'; 
+                        echo $classificationList; 
+                        }
+                    ?>
 
-                <noscript>
-                <p><strong>JavaScript Must Be Enabled to Use this Page.</strong></p>
-                </noscript>
+                    <noscript>
+                    <p><strong>JavaScript Must Be Enabled to Use this Page.</strong></p>
+                    </noscript>
 
-                <table id="inventoryDisplay"></table>
-
+                    <table id="inventoryDisplay"></table>
+                </div>
+              
             </div>
             
         </main>
