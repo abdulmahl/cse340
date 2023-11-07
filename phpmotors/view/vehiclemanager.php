@@ -40,11 +40,15 @@
         </nav>
 
         <main class="vManager">
-            <?php
-                if(isset($message)) {
-                    echo $message;
-                }
-            ?>
+            
+            <div class="note">
+                <?php
+                    if(isset($message)) {
+                        echo $message;
+                    }
+                ?>
+            </div>
+
             <div class="managementWrap">
 
                 <h1 class="vehicle-manager">Vehicle Management</h1>

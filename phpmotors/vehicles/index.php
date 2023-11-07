@@ -59,8 +59,8 @@
 
             // Check for missing input.
             if(empty($newClassificationName)) {
-                $message = '<p class="note">Please provide information for all empty form fields.</p>';
-                $message1 = '<p class="note">NB, all fields marked with an * are obligatory</p>';
+                $message = '<p>Please provide information for all empty form fields.</p>';
+                $message1 = '<p>NB, all fields marked with an * are obligatory</p>';
                 include '../view/addclassification.php';
                 exit;
             }
@@ -73,7 +73,7 @@
                 header ('Location: http://localhost/phpmotors/vehicles/index.php');
                 exit;
             } else {
-                $message = '<p class="note">Sorry, car classification registration failed. Please try again.</p>';
+                $message = '<p>Sorry, car classification registration failed. Please try again.</p>';
                 include '../view/addclassification.php';
                 exit;
             }
@@ -94,8 +94,8 @@
 
             // Check for missing data
             if(empty($classificationName)||empty($invMake)||empty($invModel)||empty($invDescription)||empty($invImage)||empty($invThumbnail)||empty($invPrice)||empty($invStock)||empty($invColor)) {
-                $message = '<p class="note">Please provide information for all empty form fields.</p>';
-                $message1 = '<p class="note">NB, all fields marked with an * are obligatory</p>';
+                $message = '<p>Please provide information for all empty form fields.</p>';
+                $message1 = '<p>NB, all fields marked with an * are obligatory</p>';
                 include '../view/addvehicle.php';
                 exit; 
             }
@@ -105,11 +105,11 @@
 
             // Check and report the result
             if($regVehicleOutcome === 1){
-                $message = "<p class='note'>The $invMake $invModel, was successfully added! Thank you.</p>";
+                $message = "<p>The $invMake $invModel, was successfully added! Thank you.</p>";
                 include '../view/addvehicle.php';
                 exit;
             } else {
-                $message = '<p class="note">Sorry, vehicle registration failed. Please try again later.</p>';
+                $message = '<p>Sorry, vehicle registration failed. Please try again later.</p>';
                 include '../view/addvehicle.php';
                 exit;
             }
@@ -128,7 +128,7 @@
             $invId = filter_input(INPUT_POST, 'invId', FILTER_SANITIZE_NUMBER_INT);
 
             if (empty($classificationId) || empty($invMake) || empty($invModel) || empty($invDescription) || empty($invImage) || empty($invThumbnail) || empty($invPrice) || empty($invStock) || empty($invColor)) {
-                $message = '<p class="note">Please complete all information for the updated item! Double check the classification of the item.</p>';
+                $message = '<p>Please complete all information for the updated item! Double check the classification of the item.</p>';
                 include '../view/update-vehicle.php';
                 exit;
             }
@@ -136,12 +136,12 @@
             $updateResult = updateVehicle($invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor, $classificationId, $invId);
 
             if ($updateResult) {
-                $message = "<p class'note'>Congratulations, the $invMake $invModel was successfully updated.</p>";
+                $message = "<p>Congratulations, the $invMake $invModel was successfully updated.</p>";
                 $_SESSION['message'] = $message;
                 header('Location: /phpmotors/vehicles/');
                 exit;
             } else {
-                $message = "<p class='note'>Error. The $invMake $invModel was not updated.</p>";
+                $message = "<p>Error. The $invMake $invModel was not updated.</p>";
                 include '../view/update-vehicle.php';
                 exit;
             }
@@ -160,7 +160,7 @@
             $invId = filter_input(INPUT_GET, 'invId', FILTER_VALIDATE_INT);
             $invInfo = getInvItemInfo($invId);
             if(count($invInfo) < 1) {
-                $message = '<p class="note">Sorry, no vehicle infornation could be found</p>';
+                $message = '<p>Sorry, no vehicle infornation could be found</p>';
             }
             include '../view/update-vehicle.php';
             exit;
