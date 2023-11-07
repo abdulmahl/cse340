@@ -350,7 +350,7 @@ form div label input {
     font-weight: 900;
 }
 
-.regButton, .logInButton {
+.regButton, .logInButton, .delButton {
     background-color: var(--blue2);
     padding: .75rem;
     border-radius: .7rem;
@@ -377,6 +377,11 @@ form div label input {
 
 .regButton:hover, .logInButton:hover {
     background-color: var(--blue1);
+}
+
+.delButton:hover {
+    background-color: #ff0000;
+    color: var(--blue2);
 }
 
 /* Login & Register forms styling */
@@ -613,4 +618,15 @@ textarea {
     text-align: center;
     padding: 1rem 0;
     color: var(--gray1);
+}
+
+.confirm-del {
+    font-size: 1rem;
+    text-align: center;
+    color: #ff0000;
+    padding: 0 0 .9rem;
+}
+
+.del {
+    color: #ff0000;
 }

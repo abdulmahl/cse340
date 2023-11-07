@@ -180,7 +180,7 @@
         text-align: center;
     }
 
-    .regButton {
+    .regButton, .delButton {
         width: 60%;
     }
 
@@ -202,8 +202,8 @@
     }
 
     /* Register Message styling */
-    .note {
-        font-size: 1.5rem;
+    .note, .confirm-del {
+        font-size: 1.6rem;
     }
 
     /* Styling for the add vehicle and classification */

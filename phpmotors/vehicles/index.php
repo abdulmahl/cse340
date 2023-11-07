@@ -141,8 +141,27 @@
                 header('Location: /phpmotors/vehicles/');
                 exit;
             } else {
-                $message = "<p>Error. The $invMake $invModel was not updated.</p>";
+                $message = "<p>Error: The $invMake $invModel was not updated.</p>";
                 include '../view/update-vehicle.php';
+                exit;
+            }
+        break;
+
+        case 'deleteVehicle':
+            $invMake = filter_input(INPUT_POST, 'invMake', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $invModel = filter_input(INPUT_POST, 'invModel', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $invId = filter_input(INPUT_POST, 'invId', FILTER_SANITIZE_NUMBER_INT);
+
+            $deleteResult = deleteVehicle($invId);
+            if ($deleteResult) {
+                $message = "<p>Congratulations the, $invMake $invModel was	successfully deleted.</p>";
+                $_SESSION['message'] = $message;
+                header('location: /phpmotors/vehicles/');
+                exit;
+            } else {
+                $message = "<p>Error: $invMake $invModel was not deleted.</p>";
+                $_SESSION['message'] = $message;
+                header('location: /phpmotors/vehicles/');
                 exit;
             }
         break;
@@ -160,9 +179,19 @@
             $invId = filter_input(INPUT_GET, 'invId', FILTER_VALIDATE_INT);
             $invInfo = getInvItemInfo($invId);
             if(count($invInfo) < 1) {
-                $message = '<p>Sorry, no vehicle infornation could be found</p>';
+                $message = '<p>Sorry, no vehicle information could be found</p>';
             }
             include '../view/update-vehicle.php';
+            exit;
+        break;
+
+        case 'del':
+            $invId = filter_input(INPUT_GET, 'invId', FILTER_VALIDATE_INT);
+            $invInfo = getInvItemInfo($invId);
+            if(count($invInfo) < 1) {
+                $message = '<p>Sorry, no vehicle information could be found</p>';
+            }
+            include '../view/delete-vehicle.php';
             exit;
         break;
 
@@ -176,7 +205,7 @@
 
         case 'updatevehicle':
             include '../view/update-vehicle.php';
-            break;
+        break;
 
         default:
             $classificationList = buildClassificationList($classifications);
