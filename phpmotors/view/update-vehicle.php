@@ -89,7 +89,7 @@
 
                     <div id="regButton">
                         <button class="regButton">Update Vehicle</button>
-                        <input type="hidden" name="action" value="updateVehicle">
+                        <input type="hidden" name="action" value="update-vehicle">
                         <input type="hidden" name="invId" value="<?php if(isset($invInfo['invId'])) {echo $invInfo['invId'];} elseif(isset($invId)) {echo $invId;} ?>">
                     </div>
 
