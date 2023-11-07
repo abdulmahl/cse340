@@ -433,7 +433,7 @@ h1.add-vehicle, h1.add-classification {
     padding: 2rem 0;
 }
 
-.note {
+/* .note {
     text-align: center;
     background: var(--gray1);
     color: var(--white);
@@ -441,7 +441,7 @@ h1.add-vehicle, h1.add-classification {
     margin: 1rem auto;
     width: 90%;
     font-size: .9rem;
-}
+} */
 
 form label {
     display: flex;
@@ -615,4 +615,14 @@ textarea {
 
 #classificationId {
     padding: .75rem;
+}
+
+p.note {
+    font-size: 1rem;
+    font-weight: 900;
+    background: var(--gray1);
+    text-align: center;
+    padding: 1rem 0;
+    margin: 1rem;
+    color: var(--blue2);
 }

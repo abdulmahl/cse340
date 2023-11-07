@@ -59,15 +59,15 @@
 
             // Check for existing email in the table.
             if($existingEmail) {
-                $message = '<p>That email address already exists! Do you want to login instead? </p>';
+                $message = '<p class"note">That email address already exists! Do you want to login instead? </p>';
                 include '../view/login.php';
                 exit;
             }
 
             // Check for missing data
             if(empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($checkPassword)){
-                $message = '<p>Please provide information for all empty form fields.</p>';
-                $message1 = '<p>NB, all fields marked with an * are obligatory</p>';
+                $message = '<p class="note">Please provide information for all empty form fields.</p>';
+                $message1 = '<p class="note">NB, all fields marked with an * are obligatory</p>';
                 include '../view/register.php';
                 exit; 
             }
@@ -84,12 +84,12 @@
                 
                 setcookie('firstname', $sessionFirstname, strtotime('+1 year'), '/');
 
-                $_SESSION['message'] = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
+                $_SESSION['message'] = "<p class='note'>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
                 header('Location: /phpmotors/accounts/?action=login');
                 // include '../view/login.php';
                 exit;
             } else {
-                $message = "<p>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
+                $message = "<p class='note'>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
                 include '../view/register.php';
                 exit;
             }
@@ -108,7 +108,7 @@
             // Check for any missing data.
             if(empty($clientEmail) || empty($checkPassword)) {
                 // var_dump( $checkPassword);
-                $_SESSION['message'] = '<p>Please provide valid email address and password.</p>';
+                $_SESSION['message'] = '<p class="note">Please provide valid email address and password.</p>';
                 include '../view/login.php';
                 exit; 
             }
@@ -122,7 +122,7 @@
             // If the hashes don't match create an error
             // and return to the login view
             if(!$hashCheck) {
-            $_SESSION['message'] = '<p>Please check your password and try again.</p>';
+            $_SESSION['message'] = '<p class="note">Please check your password and try again.</p>';
             include '../view/login.php';
             exit;
             }

@@ -47,10 +47,10 @@
     switch($action) {
         case 'template':
             include 'view/template.php';
-            break;
+        break;
 
         default:
             include 'view/home.php';
-            break;
+        break;
     }
 ?>

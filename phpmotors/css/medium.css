@@ -202,9 +202,14 @@
     }
 
     /* Register Message styling */
-    p {
-        font-size: 1.7rem;
+    p.note {
+        font-size: 1.3rem;
         font-weight: 900;
+        background: var(--gray1);
+        text-align: center;
+        padding: 1rem 0;
+        margin: 1rem;
+        color: var(--blue2);
     }
 
     /* Styling for the add vehicle and classification */

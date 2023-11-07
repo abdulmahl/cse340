@@ -3,6 +3,10 @@
         header('Location: /phpmotors/index.php/');
         exit;
     }
+
+    if(isset($_SESSION['message'])) {
+        $message = $_SESSION['message'];
+    }
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,9 +55,6 @@
 
                 <div class="heading">
                     <?php
-                        if (isset($message)) { 
-                        echo $message; 
-                        } 
                         if (isset($classificationList)) { 
                         echo '<h2>Vehicles By Classification</h2>'; 
                         echo '<p class="choose">Choose a classification to see those vehicles</p>'; 
@@ -80,4 +81,4 @@
     <script src="../scripts/index.js"></script>
     <script src="../scripts/date-time.js"></script>
 </body>
-</html>
+</html><?php unset($_SESSION['message']); ?>
