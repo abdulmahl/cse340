@@ -188,7 +188,7 @@
     .loginFormWrap, .registerFormWrap {
         background-color: var(--blue2);
         width: 60%;
-        margin: 3rem auto;
+        margin: 0 auto;
         border: 3px solid var(--gray2);
         border-radius: 1rem;
     }
@@ -203,11 +203,7 @@
 
     /* Register Message styling */
     .note {
-        font-size: 1.3rem;
-        font-weight: 900;
-        text-align: center;
-        padding: 1rem 0;
-        color: var(--gray1);
+        font-size: 1.5rem;
     }
 
     /* Styling for the add vehicle and classification */

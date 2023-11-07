@@ -107,8 +107,8 @@
     /* Log in form styling */
 
     /* Register Message styling */
-    p {
-        font-size: 2.3rem;
+    .note {
+        font-size: 2.1rem;
     }
 
     .show {

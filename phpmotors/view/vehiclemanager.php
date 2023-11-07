@@ -40,7 +40,7 @@
         </nav>
 
         <main class="vManager">
-            
+
             <div class="note">
                 <?php
                     if(isset($message)) {
