@@ -5,21 +5,20 @@
     }
 
     // Build the classifications option list
-    $classifList = '<select name="classificationName" id="classificationId">';
-    $classifList .= "<option>Choose a Car Classification</option>";
-    foreach ($carClassifications as $classification) {
-    $classifList .= "<option value='$classification[classificationId]'";
-    if(isset($classificationId)){
-        if($classification['classificationId'] === $classificationId){
-            $classifList .= ' selected ';
+    $classifList = '<select name="classificationId" id="classificationId">';
+        foreach($classifications as $classification) {
+            $classifList .= "<option value='$classification[classificationId]'";
+            if(isset($classificationId)) {
+                if($classification['classifictionId'] === $classificationId) {
+                    $classifList .= ' selected ';
+                }
+            } elseif(isset($invInfo['classificationId'])) {
+                if($classification['classificationId'] === $invInfo['classificationId']) {
+                    $classifList .= ' selected ';
+                }
+            }
+        $classifList .= ">$classification[classificationName]</option>";
         }
-    } elseif(isset($invInfo['classificationId'])){
-        if($classification['classificationId'] === $invInfo['classificationId']){
-            $classifList .= ' selected ';
-        }
-    }
-    $classifList .= ">$classification[classificationName]</option>";
-    }
     $classifList .= '</select>';
 
 ?><!DOCTYPE html>

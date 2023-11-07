@@ -46,9 +46,6 @@
     // echo $classificationList;
     // exit;
 
-    // $classificationList = buildClassificationList($classifications);
-    // var_dump($classificationList);
-
     $action = filter_input(INPUT_POST, 'action');
     if($action == NULL) {
         $action = filter_input(INPUT_GET, 'action');
