@@ -46,6 +46,7 @@
                 <li class="credentials"> First Name: <?php echo $_SESSION['clientData']['clientFirstname']; ?></li>
                 <li class="credentials"> Last Name: <?php echo $_SESSION['clientData']['clientLastname']; ?></li>
                 <li class="credentials"> Email: <?php echo $_SESSION['clientData']['clientEmail']; ?></li>
+                <li class="credentials"> Client Level: <?php echo $_SESSION['clientData']['clientLevel']; ?></li>
             </ul>
             
             <?php 
