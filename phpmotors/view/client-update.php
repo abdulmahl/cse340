@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PHP Motors Template">
-    <title>Update Client Details &bull; PHP Motors</title>
+    <title>Account Management &bull; PHP Motors</title>
     <link rel="stylesheet" href="/phpmotors/css/base.css">
     <link rel="stylesheet" href="/phpmotors/css/medium.css">
     <link rel="stylesheet" href="/phpmotors/css/large.css">
@@ -117,7 +117,7 @@
         }
     </script>
 
-    <script src="scripts/index.js"></script>
+    <script src="/phpmotors/scripts/index.js"></script>
     <script src="/phpmotors/scripts/date-time.js"></script>
 
 </body>

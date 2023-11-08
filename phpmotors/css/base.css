@@ -527,8 +527,12 @@ a.welcome:hover {
     text-decoration: none;
 }
 
-.fullname, .inv {
-    padding: .5rem .5rem 0;
+.fullname{
+    padding: 0 .5rem 0;
+}
+
+.inv {
+    padding: .5rem .5rem 0
 }
 
 .pipe {
