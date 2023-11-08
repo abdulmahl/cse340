@@ -1,6 +1,6 @@
 <?php   
     if(!$_SESSION['loggedin']) {
-        // header('Location: /phpmotors/index.php/');
+        header('Location: /phpmotors/index.php/');
     }
 ?><!DOCTYPE html>
 <html lang="en">
@@ -52,15 +52,15 @@
                     <h2 class="reg">Account Update</h2>
                    
                     <div class="registerNames__Field">
-                        <label for="clientFirstName" class="clientnames">First Name: <input name="firstname" type="text" id="clientFirstName" placeholder="First Name*" <?php if(isset($firstname)) {echo "value='$firstname'";} elseif($_SESSION['clientData']['clientFirstname']) {echo "value='".$_SESSION['clienyData']['ClientFirstname']."'";} ?> required></label>
-                        <label for="clientLastName" class="clientnames">Last Name: <input name="lastname" type="text" id="clientLastName" placeholder="Last Name*" <?php if(isset($lastname)) {echo "value='$lastname'";} elseif($_SESSION['clientData']['clientLastname']) {echo "value'".$_SESSION['clientData']['clientLastname']."'";} ?> required></label>
-                        <label for="clientEmail" class="clientnames">Email: <input name="newEmail" type="email" id="clientEmail" placeholder="Email*" <?php if(isset($newEmail)) {echo "value='$newEmail'";} elseif($_SESSION['clientData']['clientEmail']) {echo "value'".$_SESSION['clientData']['clientEmail']."'";} ?> required></label>
+                        <label for="clientFirstName" class="clientnames">First Name: <input name="firstname" type="text" id="clientFirstName"  <?php if(isset($firstname)) {echo $firstname;} elseif($_SESSION['clientData']['clientFirstname']) {echo $_SESSION['clientData']['clientFirstname'];} ?> placeholder="First Name*" required></label>
+                        <label for="clientLastName" class="clientnames">Last Name: <input name="lastname" type="text" id="clientLastName" <?php if(isset($lastname)) {echo $lastname;} elseif($_SESSION['clientData']['clientLastname']) {echo $_SESSION['clientData']['clientLastname'];} ?> placeholder="Last Name*" required></label>
+                        <label for="clientEmail" class="clientnames">Email: <input name="newEmail" type="email" id="clientEmail" <?php if(isset($newEmail)) {echo $newEmail;} elseif($_SESSION['clientData']['clientEmail']) {echo $_SESSION['clientData']['clientEmail'];} ?> placeholder="Email*" required></label>
                     </div>
 
                     <div id="regButton">
                         <button class="regButton">Update Details</button>
                         <input type="hidden" name="action" value="updateDetails">
-                        <input type="hidden" name="invId" value="<?php if(isset($_SESSION['clientData']['clientId'])) {echo "value='".$_SESSION['clientData']['clientId']."'";} ?>">
+                        <input type="hidden" name="invId" value="<?php if(isset($_SESSION['clientData']['clientId'])) {echo $_SESSION['clientData']['clientId'];} ?>">
                     </div>
 
                 </form>
@@ -88,7 +88,7 @@
                     <div id="updateButton">
                         <button class="regButton">Update Password</button>
                         <input type="hidden" name="action" value="updatePassword">
-                        <input type="hidden" name="invId" value="<?php if(isset($_SESSION['clientData']['clientId'])) {echo "value='".$_SESSION['clientData']['clientId']."'";} ?>">
+                        <input type="hidden" name="invId" value="<?php if(isset($_SESSION['clientData']['clientId'])) {echo $_SESSION['clientData']['clientId'];} ?>">
                     </div>
 
                     <br>

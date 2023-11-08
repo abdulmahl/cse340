@@ -198,7 +198,7 @@
             $checkPassword = checkPassword($newPassword);
 
             // Check missing data.
-            if(empty($newPassword)) {
+            if(empty($checkPassword)) {
                 $message = '<p>Please provide information for all empty form fields. <br> Check if your password matches the required pattern.</p>';
                 include '../view/client-update.php';
                 exit;
