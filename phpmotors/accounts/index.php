@@ -177,7 +177,7 @@
 
             // Check and report the result
             if($updateOutcome === 1){
-                $message = "Your details have been updated successfully $clientFirstname!";
+                $message = "Your details have been updated successfully!";
                 $_SESSION['message'] = $message;
                 header('Location: /phpmotors/accounts/');
                 exit;
@@ -207,7 +207,7 @@
             $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
 
             // Send updated password to model.
-            $updatedOutcome = updateClientPassword($newPassword, $invId);
+            $updatedOutcome = updateClientPassword($hashedPassword, $invId);
 
             // Check and report results.
             if($updatedOutcome === 1) {

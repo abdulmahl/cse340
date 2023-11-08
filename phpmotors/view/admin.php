@@ -2,6 +2,11 @@
     if(!$_SESSION['loggedin']) {
         header('Location: /phpmotors/index.php/');
     }
+
+
+    if(isset($_SESSION['message'])) {
+        $message = $_SESSION['message'];
+    }
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +40,15 @@
         </nav>
 
         <main class="adminMain">
+
+            <div class="note">
+                <?php 
+                    if(isset($_SESSION['message'])) {
+                        echo $_SESSION['message'];
+                    }
+                ?>
+            </div>
+
             <h1 class="fullname">
                 <?php
                     echo $_SESSION['clientData']['clientFirstname'].' '.$_SESSION['clientData']['clientLastname'];
@@ -80,4 +94,4 @@
 <script src="/phpmotors/scripts/date-time.js"></script>
 
 </body>
-</html>
+</html><?php unset($_SESSION['message']); ?>
