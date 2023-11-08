@@ -305,6 +305,7 @@ footer p {
 /* Registration Form styling */
 h1.reg {
     text-align: center;
+    color: var(--gray1);
 }
 
 input:required:invalid, input:focus:invalid {
@@ -638,4 +639,5 @@ textarea {
 h2.reg {
     text-align: center;
     padding: 1rem;
+    color: var(--gray1);
 }
