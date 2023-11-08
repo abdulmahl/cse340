@@ -45,7 +45,7 @@
         </header>
 
         <div class="hamBtnWrap">
-            <label class="burger" for="hamBtn"><div class="menuBtn">Menu</div>
+            <label class="burger" for="hamBtn"><small class="menuBtn">Menu</small>
                 <input name="hamburgerBtn" title="Hamburger Button" type="checkbox" id="hamBtn">
                 <?php echo $hamBtn; ?>
             </label>
@@ -55,16 +55,15 @@
            <?php echo $navList; ?>
         </nav>
 
-        <main class="add-main">
+        <div class="note"> 
+            <?php 
+                if(isset($message)) { 
+                    echo $message; 
+                }
+            ?> 
+        </div>
 
-            <div class="note"> 
-                <?php 
-                    if(isset($message)) { 
-                        echo $message; 
-                    }
-                    echo $message1; 
-                ?> 
-            </div>
+        <main class="add-main">
 
             <div class="addVehicleFormWrap">
 

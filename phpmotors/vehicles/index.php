@@ -59,8 +59,8 @@
 
             // Check for missing input.
             if(empty($newClassificationName)) {
-                $message = '<p>Please provide information for all empty form fields.</p>';
-                $message1 = '<p>NB, all fields marked with an * are obligatory</p>';
+                $message = '<p>Please provide information for all empty form fields. NB, all fields marked with an * are obligatory</p>';
+                $_SESSION['message'] = $message;
                 include '../view/addclassification.php';
                 exit;
             }
@@ -94,8 +94,8 @@
 
             // Check for missing data
             if(empty($classificationName)||empty($invMake)||empty($invModel)||empty($invDescription)||empty($invImage)||empty($invThumbnail)||empty($invPrice)||empty($invStock)||empty($invColor)) {
-                $message = '<p>Please provide information for all empty form fields.</p>';
-                $message1 = '<p>NB, all fields marked with an * are obligatory</p>';
+                $message = '<p>Please provide information for all empty form fields. NB, all fields marked with an * are obligatory</p>';
+                $_SESSION['message'] = $message;
                 include '../view/addvehicle.php';
                 exit; 
             }

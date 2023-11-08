@@ -42,7 +42,7 @@
     }
 
     switch($action) {
-        case 'register':
+        case 'registerClient':
             // Trim, filter and store the data
             $clientFirstname = trim(filter_input(INPUT_POST, 'clientFirstname', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
             $clientLastname = trim(filter_input(INPUT_POST, 'clientLastname', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
@@ -66,8 +66,7 @@
 
             // Check for missing data
             if(empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($checkPassword)){
-                $message = '<p>Please provide information for all empty form fields.</p>';
-                $message1 = '<p>NB, all fields marked with an * are obligatory</p>';
+                $message = '<p>Please provide information for all empty form fields. <br> NB, all fields marked with an * are obligatory</p>';
                 include '../view/register.php';
                 exit; 
             }
@@ -86,14 +85,13 @@
 
                 $_SESSION['message'] = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
                 header('Location: /phpmotors/accounts/?action=login');
-                // include '../view/login.php';
                 exit;
             } else {
                 $message = "<p>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
                 include '../view/register.php';
                 exit;
             }
-            break;
+        break;
 
         case 'Login':
             // Trim, filter and store the data.
@@ -138,23 +136,112 @@
             include '../view/admin.php';
             exit;
             
-            break;
+        break;
+
+        case 'updateDetails':
+            // Trim, filter and store the data
+            $firstname = trim(filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+            $lastname = trim(filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+            $newEmail = trim(filter_input(INPUT_POST, 'newEmail', FILTER_SANITIZE_EMAIL));
+            $invId = trim(filter_input(INPUT_POST, 'invId', FILTER_SANITIZE_NUMBER_INT));
+
+            // Validate the email variable using custom function.
+            $newEmail = checkEmail($newEmail);
+
+            // Check if email already exists.
+            $existingEmail = filterExistingEmail($newEmail);
+
+            // Check for existing email in the table.
+            if($existingEmail) {
+                $message = '<p>That email address already exists! Please try a different one.</p>';
+                include '../view/client-update.php';
+                exit;
+            }
+
+              // Check for missing data
+              if(empty($firstname) || empty($lastname) || empty($newEmail) || empty($invId)){
+                $message = '<p>Please provide information for all empty form fields. <br> NB, all fields marked with an * are obligatory</p>';
+                include '../view/client-update.php';
+                exit; 
+            }
+
+            // Send the updated details to the model
+            $updateOutcome = updateClientDetails($firstname, $lastname,
+            $newEmail, $invId);
+
+            // Query client data by client id.
+            $clientData = getClientById($invId);
+            array_pop($clientData); //
+            // Store data in $_SESSION storage.
+            $_SESSION['clientData'] = $clientData;
+
+            // Check and report the result
+            if($updateOutcome === 1){
+                $message = "Your details have been updated successfully $clientFirstname!";
+                $_SESSION['message'] = $message;
+                header('Location: /phpmotors/accounts/');
+                exit;
+            } else {
+                $message = "<p>Sorry $clientFirstname, but the update failed. Please try again.</p>";
+                $_SESSION['message'] = $message;
+                header('Location: /phpmotors/accounts/');
+                exit;
+            }
+
+        break;
+
+        case 'updatePassword':
+            $newPassword = filter_input(INPUT_POST, 'newPassword', FILTER_SANITIZE_STRING);
+            $invId = filter_input(INPUT_POST, 'invId', FILTER_SANITIZE_NUMBER_INT);
+
+            // Check password format using my custom function.
+            $checkPassword = checkPassword($newPassword);
+
+            // Check missing data.
+            if(empty($newPassword)) {
+                $message = '<p>Please provide information for all empty form fields. <br> Check if your password matches the required pattern.</p>';
+                include '../view/client-update.php';
+                exit;
+            }
+            // Hash new password.
+            $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+
+            // Send updated password to model.
+            $updatedOutcome = updateClientPassword($newPassword, $invId);
+
+            // Check and report results.
+            if($updatedOutcome === 1) {
+                $message = '<p>Password successfully updated!</p>';
+                $_SESSION['message'] = $message;
+                header('Location: /phpmotors/accounts/');
+                exit;
+            } else {
+                $message = "<p>Sorry $firstname, but password update failed. Please try again!";
+                $_SESSION['message'] = $message;
+                header('Location: /phpmotors/accounts/');
+                exit;
+            }
+        break;
 
         case 'logout':
             session_destroy();
             header('Location: /phpmotors/accounts/?action=login');
-            break;
+        break;
  
         case 'register':
             include '../view/register.php';
-            break;
+        break;
             
         case 'login':
             include '../view/login.php';
-            break;
+        break;
+
+        case 'update':
+            include '../view/client-update.php';
+        break;
 
         default:
             include '../view/admin.php';
-            break;
+        break;
     }
 ?>

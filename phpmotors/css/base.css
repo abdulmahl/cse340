@@ -630,3 +630,8 @@ textarea {
 .del {
     color: #ff0000;
 }
+
+h2.reg {
+    text-align: center;
+    padding: 1rem;
+}

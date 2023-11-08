@@ -22,7 +22,7 @@
         </header>
 
         <div class="hamBtnWrap">
-            <label class="burger" for="hamBtn"><div class="menuBtn">Menu</div>
+            <label class="burger" for="hamBtn"><small class="menuBtn">Menu</small>
                 <input name="hamburgerBtn" title="Hamburger Button" type="checkbox" id="hamBtn">
                 <?php echo $hamBtn; ?>
             </label>
@@ -46,17 +46,30 @@
                 <li class="credentials"> First Name: <?php echo $_SESSION['clientData']['clientFirstname']; ?></li>
                 <li class="credentials"> Last Name: <?php echo $_SESSION['clientData']['clientLastname']; ?></li>
                 <li class="credentials"> Email: <?php echo $_SESSION['clientData']['clientEmail']; ?></li>
-                <li class="credentials"> Client Level: <?php echo $_SESSION['clientData']['clientLevel']; ?></li>
             </ul>
+
+            <div class="acc-inv-container">
+                <div class="acc-man">
+                    <?php 
+                        if($_SESSION['loggedin']) {
+                            echo '<h2 class="inv">Account Management</h2>
+                                <span class="updateInv">Use this link to update your account details</span> <br>
+                                <a href="/phpmotors/accounts/index.php/?action=update" class="levelClientLink">Account Management</a>';
+                        }
+                    ?>
+                </div>
+                <br>
+                <div class="inv-man">
+                    <?php 
+                        if($_SESSION['clientData']['clientLevel'] > 1) {
+                            echo '<h2 class="inv">Inventory Management</h2>
+                                <span class="updateInv">Use this link to update the inventory</span> <br>
+                                <a href="/phpmotors/vehicles" class="levelClientLink">Vehicle Management</a>';
+                        }
+                    ?>
+                </div>
+            </div>
             
-            <?php 
-                if($_SESSION['clientData']['clientLevel'] > 1) {
-                    echo '<h2 class="inv">Inventory Management</h2>
-                        <span class="updateInv">Use this link to update the inventory</span> <br>
-                        <a class="levelClientLink" href="/phpmotors/vehicles">Vehicle Management</a>';
-                }
-            ?>
-           
         </main>
 
         <footer>

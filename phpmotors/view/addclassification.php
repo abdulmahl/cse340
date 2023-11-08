@@ -23,7 +23,7 @@
         </header>
 
         <div class="hamBtnWrap">
-            <label class="burger" for="hamBtn"><div class="menuBtn">Menu</div>
+            <label class="burger" for="hamBtn"><small class="menuBtn">Menu</small>
                 <input name="hamburgerBtn" title="Hamburger Button" type="checkbox" id="hamBtn">
                 <?php echo $hamBtn; ?>
             </label>
@@ -42,8 +42,7 @@
                     <?php 
                         if(isset($message)) {
                             echo $message;
-                            }
-                        echo $message1; 
+                        }
                     ?> 
                 </div>
 
