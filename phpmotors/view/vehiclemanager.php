@@ -40,6 +40,14 @@
         </nav>
 
         <main class="vManager">
+            
+        <div class="note">
+            <?php 
+                if(isset($_SESSION['message'])) {
+                    echo $_SESSION['message'];
+                }
+            ?>
+        </div>
 
             <div class="managementWrap">
 
