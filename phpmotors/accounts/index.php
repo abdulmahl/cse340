@@ -177,12 +177,12 @@
 
             // Check and report the result
             if($updateOutcome === 1){
-                $message = "Your details have been updated successfully!";
+                $message = "Thank you $firstname, Your details have been updated successfully!";
                 $_SESSION['message'] = $message;
                 header('Location: /phpmotors/accounts/');
                 exit;
             } else {
-                $message = "<p>Sorry $clientFirstname, but the update failed. Please try again.</p>";
+                $message = "<p>Sorry $firstname, but the update failed. Please try again.</p>";
                 $_SESSION['message'] = $message;
                 header('Location: /phpmotors/accounts/');
                 exit;
@@ -211,7 +211,7 @@
 
             // Check and report results.
             if($updatedOutcome === 1) {
-                $message = '<p>Password successfully updated!</p>';
+                $message = "<p>Thank you $firstname, Password successfully updated!</p>";
                 $_SESSION['message'] = $message;
                 header('Location: /phpmotors/accounts/');
                 exit;
