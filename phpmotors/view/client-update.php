@@ -36,10 +36,16 @@
 
         <main>
 
-            <h1 class="reg">Update Account Details</h1>
+            <?php  
+                if($_SESSION['loggedin'] && $_SESSION['clientData']['clientLevel'] > 1) {
+                    echo '<h1 class="reg"> Administrator User</h1>';
+                } else {
+                    echo '<h1 class="reg">Update Account Details</h1>';
+                }
+            ?>
 
             <div class="note"> 
-                <?php 
+                <?php
                     if(isset($message)) { 
                         echo $message;
                     }
@@ -67,6 +73,7 @@
 
             </div>
             <br> <br>
+
             <div class="registerFormWrap">
                 <form action="/phpmotors/accounts/index.php" method="POST">
 

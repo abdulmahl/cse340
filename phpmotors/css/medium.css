@@ -250,4 +250,8 @@
     .enable-js {
         font-size: 1.1rem;
     }
+
+    .fullname {
+        font-size: 3rem;
+    }
 }

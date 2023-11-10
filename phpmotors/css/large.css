@@ -126,4 +126,8 @@
     .enable-js {
         font-size: 1.5rem;
     }
+
+    .fullname {
+        font-size: 4rem;
+    }
 }

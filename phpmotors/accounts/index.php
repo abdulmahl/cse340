@@ -199,7 +199,7 @@
 
             // Check missing data.
             if(empty($checkPassword)) {
-                $message = '<p>Please provide information for all empty form fields. <br> Check if your password matches the required pattern.</p>';
+                $message = '<p>Please check if your password matches the required pattern.</p>';
                 include '../view/client-update.php';
                 exit;
             }
@@ -211,12 +211,12 @@
 
             // Check and report results.
             if($updatedOutcome === 1) {
-                $message = "<p>Thank you $firstname, Password successfully updated!</p>";
+                $message = "<p>Thank you, Password successfully updated!</p>";
                 $_SESSION['message'] = $message;
                 header('Location: /phpmotors/accounts/');
                 exit;
             } else {
-                $message = "<p>Sorry $firstname, but password update failed. Please try again!";
+                $message = "<p>Sorry, but password update failed. Please try again!";
                 $_SESSION['message'] = $message;
                 header('Location: /phpmotors/accounts/');
                 exit;

@@ -530,6 +530,8 @@ a.welcome:hover {
 
 .fullname{
     padding: 0 .5rem 0;
+    color: var(--blue1);
+    font-size: 2.7rem;
 }
 
 .inv {
