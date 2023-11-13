@@ -45,6 +45,7 @@ a.acc:hover {
 .log-out {
     text-decoration: none;
     color: var(--gray1);
+    font-size: 1.5rem;
 }
 
 .log-out:hover {
@@ -488,6 +489,7 @@ h1.vehicle-manager {
 a.welcome {
     text-decoration: none;
     color: var(--gray1);
+    font-size: 1.5rem;
 }
 
 a.welcome:hover {
@@ -539,7 +541,7 @@ a.welcome:hover {
 }
 
 .pipe {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 
 a.levelClientLink {
@@ -619,12 +621,12 @@ textarea {
     padding: .75rem;
 }
 
-.note {
-    font-size: 1rem;
+.note, .note1 {
+    font-size: 1.2rem;
     font-weight: 900;
     text-align: center;
     padding: 1rem 0;
-    color: var(--gray1);
+    color: #ff0000;
 }
 
 .confirm-del {

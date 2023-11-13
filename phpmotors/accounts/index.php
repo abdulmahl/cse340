@@ -199,7 +199,7 @@
 
             // Check missing data.
             if(empty($checkPassword)) {
-                $message = '<p>Please check if your password matches the required pattern.</p>';
+                $message1 = '<p>Please provide infomation for all empty fields. <br> Fields marked with an * are mandatory. <br> Check if your password matches the required pattern.</p>';
                 include '../view/client-update.php';
                 exit;
             }

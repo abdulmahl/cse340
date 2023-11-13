@@ -73,6 +73,14 @@
 
             </div>
             <br> <br>
+            
+            <div class="note1">
+                <?php
+                    if(isset($message1)) {
+                        echo $message1;
+                    }
+                ?>
+            </div>
 
             <div class="registerFormWrap">
                 <form action="/phpmotors/accounts/index.php" method="POST">
