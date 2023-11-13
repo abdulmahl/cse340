@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PHP Motors Template">
-    <title><?php echo $classificationName; ?> vehicles &bull; PHP Motors</title>
+    <title><?php echo $classificationName; ?> Vehicles &bull; PHP Motors</title>
     <link rel="stylesheet" href="/phpmotors/css/base.css">
     <link rel="stylesheet" href="/phpmotors/css/medium.css">
     <link rel="stylesheet" href="/phpmotors/css/large.css">
@@ -32,7 +32,7 @@
 
         <main>
 
-            <h1><?php echo $classificationName; ?> vehicles</h1>
+            <h1 class="className"><?php echo $classificationName; ?> Vehicles</h1>
 
             <?php if(isset($message)) {
                 echo $message;
