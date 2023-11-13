@@ -131,12 +131,7 @@
         font-size: 4rem;
     }
 
-    img {
-        width: 100%;
-    }
-
     #inv-display {
         flex-direction: row;
-        gap: 1rem;
     }
 }

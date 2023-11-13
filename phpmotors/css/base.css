@@ -648,12 +648,13 @@ h2.reg {
 }
 
 img {
-    width: 90%;
+    width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin: .3rem auto;
     border: .3rem solid var(--gray1);
+    margin-bottom: 1rem;
 }
 
 #inv-display li {
@@ -663,7 +664,8 @@ img {
 #inv-display {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: .7rem;
+    gap: 1rem;
 }
 
 .cardText {
