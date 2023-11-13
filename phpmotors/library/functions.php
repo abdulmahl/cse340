@@ -21,12 +21,17 @@
         return preg_match($pattern, $clientPassword);
     }
 
+    function buildHamBtn() {
+        $hamBtn = '<span></span> <span></span> <span></span>';
+        return $hamBtn;
+    }
+
     function buildNavBar($classifications) {
         //? Build a dynamic navigation bar using the $classifications array.
         $navList = '<ul>';
-        $navList .= "<li><a href='/phpmotors/index.php' title='View the PHP Motors home page'>Home</a></li>";
+        $navList .= "<li><a href='/phpmotors/' title='View the PHP Motors home page'>Home</a></li>";
         foreach ($classifications as $classification) {
-            $navList .= "<li><a href='/phpmotors/index.php?action=".urlencode($classification['classificationName'])."' title='View our $classification[classificationName] product line'>$classification[classificationName]</a></li>";
+            $navList .= "<li><a href='/phpmotors/vehicles?action=classification&classificationName=".urlencode($classification['classificationName'])."' title='View our $classification[classificationName] product line'>$classification[classificationName]</a></li>";
         }
         $navList .= '</ul>';
         return $navList;
@@ -41,5 +46,20 @@
         } 
         $classificationList .= '</select>'; 
         return $classificationList; 
+    }
+
+    // Build a vehicles display list.
+    function buildVehiclesDisplay($vehicles){
+        $dv = '<ul id="inv-display">';
+        foreach ($vehicles as $vehicle) {
+            $dv .= '<li>';
+            $dv .= "<img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
+            $dv .= '<hr>';
+            $dv .= "<h2>$vehicle[invMake] $vehicle[invModel]</h2>";
+            $dv .= "<span>$vehicle[invPrice]</span>";
+            $dv .= '</li>';
+        }
+        $dv .= '</ul>';
+        return $dv;
     }
 ?>

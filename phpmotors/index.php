@@ -17,7 +17,7 @@
     $classifications = getClassifications();
 
     //? build dynamic hamburger button.
-    $hamBtn = '<span></span> <span></span> <span></span>';
+    $hamBtn = buildHamBtn();
 
     //? Get the navigation bar.
     $navList = buildNavBar($classifications);

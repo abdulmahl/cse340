@@ -19,7 +19,7 @@
     $classifications = getClassifications();
 
     //? build dynamic hamburger button.
-    $hamBtn = '<span></span> <span></span> <span></span>';
+    $hamBtn = buildHamBtn();
 
     //? Build a navigation bar using the $classifications array.
     $navList = buildNavBar($classifications);
@@ -181,7 +181,7 @@
             exit;
         break;
 
-        case 'classification':
+        case 'classif':
             include '../view/addclassification.php';
         break;
             
@@ -191,6 +191,21 @@
 
         case 'updatevehicle':
             include '../view/update-vehicle.php';
+        break;
+
+        case 'classification':
+            $classificationName = filter_input(INPUT_GET, 'classificationName', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $vehicles = getVehiclesByClassification($classificationName);
+            if(!count($vehicles)){
+                $message = "<p class='notice'>Sorry, no $classificationName vehicles could be found.</p>";
+            } else {
+                $vehicleDisplay = buildVehiclesDisplay($vehicles);
+            }
+            echo $vehicleDisplay;
+            exit;
+            
+            include '../view/classification.php';
+            exit;
         break;
 
         default:

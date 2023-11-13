@@ -54,7 +54,7 @@
                 <h1 class="vehicle-manager">Vehicle Management</h1>
                 <div class="addVehicleandClass">
                     <a href="/phpmotors/vehicles/?action=vehicle">Add a vehicle</a>
-                    <a href="/phpmotors/vehicles/?action=classification">Add a classification</a>
+                    <a href="/phpmotors/vehicles/?action=classif">Add a classification</a>
                 </div>
 
                 <div class="heading">
@@ -81,8 +81,8 @@
             <?php require $_SERVER['DOCUMENT_ROOT'].'/phpmotors/snippets/footer.php'; ?>
         </footer>
     </div>
-    <script src="../scripts/inventory.js"></script>
-    <script src="../scripts/index.js"></script>
-    <script src="../scripts/date-time.js"></script>
+    <script src="/phpmotors/scripts/inventory.js"></script>
+    <script src="/phpmotors/scripts/index.js"></script>
+    <script src="/phpmotors/scripts/date-time.js"></script>
 </body>
 </html><?php unset($_SESSION['message']); ?>

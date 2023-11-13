@@ -1,5 +1,5 @@
 <div id="headerWrap">
-    <a href="http://localhost/phpmotors/index.php" title="View the PHP Motors Home Page">
+    <a href="http://localhost/phpmotors/" title="View the PHP Motors Home Page">
         <img src="/phpmotors/images/site/logo.png" alt="logo-image" id="logo">
     </a>
     
