@@ -16,22 +16,11 @@
     //? Get the array classifications.
     $classifications = getClassifications();
 
-    // var_dump($classifications);
-    // exit;
-
     //? build dynamic hamburger button.
     $hamBtn = '<span></span> <span></span> <span></span>';
 
-    //? Build a dynamic navigation bar using the $classifications array.
-    $navList = '<ul>';
-    $navList .= "<li><a href='/phpmotors/index.php' title='View the PHP Motors home page'>Home</a></li>";
-    foreach ($classifications as $classification) {
-     $navList .= "<li><a href='/phpmotors/index.php?action=".urlencode($classification['classificationName'])."' title='View our $classification[classificationName] product line'>$classification[classificationName]</a></li>";
-    }
-    $navList .= '</ul>';
-
-    // echo $navList;
-    // exit;
+    //? Get the navigation bar.
+    $navList = buildNavBar($classifications);
 
     //? Check if firstname cookie exists, if it does collect it's value.
     if(isset($_SESSION['loggedin'])) {

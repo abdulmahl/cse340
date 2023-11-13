@@ -18,33 +18,19 @@
     //? Get the array classifications.
     $classifications = getClassifications();
 
-    // var_dump($classifications);
-    // exit;
-
     //? build dynamic hamburger button.
     $hamBtn = '<span></span> <span></span> <span></span>';
 
     //? Build a navigation bar using the $classifications array.
-    $navList = '<ul>';
-    $navList .= "<li><a href='/phpmotors/index.php' title='View the PHP Motors Home Page'>Home</a></li>";
-    foreach ($classifications as $classification) {
-        $navList .= "<li><a href='/phpmotors/index.php?action=".urlencode($classification['classificationName'])."' title='View our $classification[classificationName] product line'>$classification[classificationName]</a></li>";
-    }
-    $navList .= '</ul>';
+    $navList = buildNavBar($classifications);
 
-    // echo $navList;
-    // exit;
-
-    //? Build the dynamic dropdown selection list.
+    //? Build the dropdown selection list.
     $classificationList = '<select name="classificationName" class="selectionTab">';
     $classificationList .= '<option disabled selected> Select Classification </option>';
     foreach($classifications as $classification) {
         $classificationList .= "<option value=$classification[classificationId]>$classification[classificationName]</option>";
     }
     $classificationList .= '</select>';
-
-    // echo $classificationList;
-    // exit;
 
     $action = filter_input(INPUT_POST, 'action');
     if($action == NULL) {
