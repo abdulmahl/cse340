@@ -215,6 +215,7 @@ h1.contentTitle {
 #heroImage {
     width: 100%;
     margin-top: -.3rem;
+    border: none;
 }
 
 .ownToday {
@@ -265,6 +266,7 @@ h2.upgrades {
     justify-content: center;
     background: var(--blue1);
     width: 11rem;
+    border: none;
 }
 
 #iconImg1 {
@@ -279,8 +281,13 @@ h2.upgrades {
     width: 4.6rem;
 }
 
+img#iconImg4 {
+    width: 4.3rem;
+}
+
 #iconImg1, #iconImg2, #iconImg3, #iconImg4 {
     margin: .7rem;
+    border: none;
 }
 
 a.flux {
