@@ -258,4 +258,16 @@
     img#whips:hover {
         border: .3rem solid var(--blue1);
     }
+
+    .vName {
+        font-size: 2.3rem;
+    }
+
+    .invPrice {
+        font-size: 1.7rem;
+    }
+
+    footer p {
+        font-size: 1.1rem;
+    }
 }

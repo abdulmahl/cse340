@@ -685,3 +685,11 @@ img {
     text-align: center;
     padding: 1rem 0;
 }
+
+.vName {
+    font-size: 2rem;
+}
+
+.invPrice {
+    font-size: 1.5rem;
+}

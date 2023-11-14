@@ -55,7 +55,7 @@
             $dv .= '<li>';
             $dv .= '<div class="card">';
             $dv .= '<div class="cardText">';
-            $dv .= "<h2>$vehicle[invMake] $vehicle[invModel]</h2>";
+            $dv .= "<h2 class='vName'>$vehicle[invMake] $vehicle[invModel]</h2>";
             $dv .= "<span class='invPrice'>$$vehicle[invPrice]</span>";
             $dv .= '</div>';
             $dv .= "<img id='whips' src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
