@@ -55,6 +55,7 @@ a.acc:hover {
 img#logo {
     width: 11rem;
     border: none;
+    margin: 0;
 }
 
 #cookie {
@@ -216,6 +217,7 @@ h1.contentTitle {
     width: 100%;
     margin-top: -.3rem;
     border: none;
+    margin: 0;
 }
 
 .ownToday {
@@ -657,8 +659,6 @@ h2.reg {
 img {
     width: 100%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
     margin: .3rem auto;
     border: .3rem solid var(--gray1);
     margin-bottom: 1rem;

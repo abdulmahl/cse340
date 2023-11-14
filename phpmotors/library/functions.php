@@ -56,9 +56,9 @@
             $dv .= '<div class="card">';
             $dv .= '<div class="cardText">';
             $dv .= "<h2>$vehicle[invMake] $vehicle[invModel]</h2>";
-            $dv .= "<span>$$vehicle[invPrice]</span>";
+            $dv .= "<span class='invPrice'>$$vehicle[invPrice]</span>";
             $dv .= '</div>';
-            $dv .= "<img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
+            $dv .= "<img id='whips' src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
             $dv .= '</div>';
             $dv .= '<hr>';
             $dv .= '</li>';

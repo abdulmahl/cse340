@@ -45,7 +45,7 @@
 
     div.container {
         border: 5px solid var(--blue1);
-        width: 80%;
+        width: 90%;
         margin: 2rem auto;
         background: var(--white);
         border-radius: .5rem;
@@ -253,5 +253,9 @@
 
     .fullname {
         font-size: 3rem;
+    }
+
+    img#whips:hover {
+        border: .3rem solid var(--blue1);
     }
 }
