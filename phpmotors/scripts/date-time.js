@@ -1,4 +1,4 @@
-let dayOfWeek = [
+let _dayOfWeek = [
     "Sun",
     'Mon',
     'Tue',
@@ -25,7 +25,7 @@ let _month = [
 
 const date = new Date();
 
-let day = dayOfWeek[date.getDay()];
+let day = _dayOfWeek[date.getDay()];
 let month = _month[date.getMonth()];
 let year = date.getFullYear();
 
