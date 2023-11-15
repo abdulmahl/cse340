@@ -529,7 +529,7 @@ a.welcome:hover {
     gap: .3rem;
     padding-bottom: 1rem;
     align-items: end;
-    margin-left: 1rem;
+    margin-right: .9rem;
 }
 
 .sign {
@@ -657,7 +657,7 @@ h2.reg {
     color: var(--gray1);
 }
 
-img#whips {
+img {
     width: 100%;
     display: block;
     margin: .3rem auto;

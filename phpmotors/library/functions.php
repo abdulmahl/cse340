@@ -58,7 +58,9 @@
             $dv .= "<h2 class='vName'>$vehicle[invMake] $vehicle[invModel]</h2>";
             $dv .= "<span class='invPrice'>$$vehicle[invPrice]</span>";
             $dv .= '</div>';
+            $dv .= '<div class="imgContainer">';
             $dv .= "<img id='whips' src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
+            $dv .= '</div>';
             $dv .= '</div>';
             $dv .= '<hr>';
             $dv .= '</li>';
