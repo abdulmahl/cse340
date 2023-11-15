@@ -54,7 +54,7 @@
                     <div class="createPassword__Field">
                         <label for="password" class="clientnames">Create Password<input name="clientPassword" type="password" id="password" placeholder="Password*" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"></label>
                     </div>
-                    <label for="show-password" class="show"><input name="show" type="checkbox" id="show-password" onclick="myFunction()">Show Password</label>
+                    <label for="show-password" class="show"><input name="show" type="checkbox" id="show-password">Show Password</label>
                     <p class="passwordCharacters">
                         Passwords should be a minimum of eight characters in length. 
                         Longer passwords are more secure, they should contain at least 1 
@@ -75,16 +75,6 @@
             <?php require $_SERVER['DOCUMENT_ROOT'].'/phpmotors/snippets/footer.php'; ?>
         </footer>
     </div>
-    <script>
-        function myFunction() {
-          let x = document.getElementById("password");
-          if (x.type === "password") {
-            x.type = "text";
-          } else {
-            x.type = "password";
-          }
-        }
-    </script>
     <script src="/phpmotors/scripts/index.js"></script>
     <script src="/phpmotors/scripts/date-time.js"></script>
 

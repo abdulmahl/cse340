@@ -61,7 +61,7 @@
                 <div class="heading">
                     <?php
                         if (isset($classificationList)) { 
-                        echo '<h2>Vehicles By Classification</h2>'; 
+                        echo '<h2 class="vByClass">Vehicles By Classification</h2>'; 
                         echo '<p class="choose">Choose a classification to see those vehicles</p>'; 
                         echo $classificationList; 
                         }

@@ -37,14 +37,6 @@
 
         <main>
 
-            <?php  
-                if($_SESSION['loggedin'] && $_SESSION['clientData']['clientLevel'] > 1) {
-                    echo '<h1 class="reg"> Administrator User</h1>';
-                } else {
-                    echo '<h1 class="reg">Update Account Details</h1>';
-                }
-            ?>
-
             <div class="note"> 
                 <?php
                     if(isset($message)) { 
