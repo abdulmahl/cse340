@@ -59,7 +59,7 @@
             $dv .= "<span class='invPrice'>$$vehicle[invPrice]</span>";
             $dv .= '</div>';
             $dv .= '<div class="imgContainer">';
-            $dv .= "<img id='whips' src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
+            $dv .= "<img class='whips' src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
             $dv .= '</div>';
             $dv .= '</div>';
             $dv .= '<hr>';

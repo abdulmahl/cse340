@@ -2,7 +2,7 @@
     :root {
        /* Typography */
        --bodyFontSize: 18px;
-       --fontFamily: 'Rajdhani', sans-serif;
+       --fontFamily: 'Comic Neue', sans-serif;
        --lineHeight: 1.3;
        --bodyFontWeight: 700;
 
@@ -135,7 +135,7 @@
         flex-direction: row;
     }
 
-    img#whips {
+    img.whips {
         object-fit: cover;
         transition: transform 600ms;
     }
