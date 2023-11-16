@@ -154,4 +154,45 @@
     footer p {
         font-size: 1.3rem;
     }
+
+    section.vehicle-details {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    img#displayWhip {
+        width: 100%;
+        margin: .3rem;
+    }
+
+    .vHeader, .vPrice {
+        background: var(--gray3);
+        width: 100%;
+    }
+
+    .grayOut, .grayOutDesc, h2.vNameDesc {
+        background: var(--gray3);
+        padding: .56rem;
+        width: 100%;
+    }
+
+    .leftPart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .rightPart {
+        display: flex;
+        flex-direction: column;
+        gap: 6.1rem;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(var(--blue2), var(--blue1));
+    }
 }

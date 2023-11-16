@@ -32,7 +32,6 @@
         </nav>
 
         <main>
-            <h1 class="vHeader"> <?php echo "$vehicleDetails[invMake] $vehicleDetails[invModel]";?></h1>
             
             <div class="note">
                 <?php 

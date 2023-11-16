@@ -710,3 +710,18 @@ img.whips {
 .vByClass {
     font-family: 'Rajdhani';
 }
+
+.vHeader, .vPrice {
+    padding: 1rem 1rem 0;
+}
+
+.rightPart {
+    padding-left: 1rem;
+}
+
+img#displayWhip {
+    width: 97%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

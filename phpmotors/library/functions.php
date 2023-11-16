@@ -57,7 +57,7 @@
             $dv .= '<div class="card">';
             $dv .= '<div class="cardText">';
             $dv .= "<h2 class='vName'>$vehicle[invMake] $vehicle[invModel]</h2>";
-            $dv .= '<span class="invPrice">$'.number_format($vehicle['invPrice'], 2, '.').'</span>';
+            $dv .= '<span class="invPrice">$'.number_format($vehicle['invPrice']).'</span>';
             $dv .= '</div>';
             $dv .= '<div class="imgContainer">';
             $dv .= "<img class='whips' src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
@@ -74,12 +74,20 @@
     // This function will build a display of vehicle details.
     function getVehicleDisplay($vehicleDetails){
         $dv = "<section class='vehicle-details'>";
-        $dv .= "<img src='$vehicleDetails[invImage]' alt='$vehicleDetails[invMake]-$vehicleDetails[inModel]'>";
-        $dv .= '<h2>Price: $'.number_format($vehicleDetails['invPrice']).'</h2>';
-        $dv .= "<h2>$vehicleDetails[invMake] $vehicleDetails[invModel] Details</h2>";
-        $dv .= "<p>$vehicleDetails[invDescription]</p>";
-        $dv .= "<p>Color: $vehicleDetails[invColor]</p>";
-        $dv .= "<p>Inventory Stock: $vehicleDetails[invStock]</p>";
+
+        $dv .= '<div class="leftPart">';
+        $dv .= "<h1 class='vHeader'> $vehicleDetails[invMake] $vehicleDetails[invModel] </h1>";
+        $dv .= "<img id='displayWhip' src='$vehicleDetails[invImage]' alt='$vehicleDetails[invMake]-$vehicleDetails[inModel]'>";
+        $dv .= '<h2 class="vPrice">Price: $'.number_format($vehicleDetails['invPrice'], 2, '.').'</h2>';
+        $dv .= '</div>';
+
+        $dv .= '<div class="rightPart">';
+        $dv .= "<h2 class='vNameDesc'>$vehicleDetails[invMake] $vehicleDetails[invModel] Details</h2>";
+        $dv .= "<p class='grayOutDesc'>$vehicleDetails[invDescription]</p>";
+        $dv .= "<p class='grayOut'>Color: $vehicleDetails[invColor]</p>";
+        $dv .= "<p class='grayOut'>Inventory Stock: $vehicleDetails[invStock]</p>";
+        $dv .= '</div>';
+
         $dv .= '</section>';
         return $dv;
     }
