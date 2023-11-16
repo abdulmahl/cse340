@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PHP Motors Template">
-    <title>Template &bull; PHP Motors</title>
+    <title><?php echo "$vehicleDetails[invMake] $vehicleDetails[invModel]"; ?> &bull; PHP Motors</title>
     <link rel="stylesheet" href="/phpmotors/css/base.css">
     <link rel="stylesheet" href="/phpmotors/css/medium.css">
     <link rel="stylesheet" href="/phpmotors/css/large.css">
@@ -32,7 +32,20 @@
         </nav>
 
         <main>
-            <h1 class="contentTitle">Content Title Here...</h1>
+            <h1 class="vHeader"> <?php echo "$vehicleDetails[invMake] $vehicleDetails[invModel]";?></h1>
+            
+            <div class="note">
+                <?php 
+                    if(isset($message)) {
+                        echo $message;
+                    } 
+                ?>
+            </div>
+
+            <div class="vehicleDetails">
+                <?php echo "$displayVehicleDetails"?>
+            </div>
+
         </main>
 
         <footer>

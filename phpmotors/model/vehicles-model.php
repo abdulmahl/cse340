@@ -132,4 +132,16 @@
         $stmt->closeCursor();
         return $vehicles;
     }
+
+    function getVehicleDetails($invId) {
+        $db = phpmotorsConnect();
+        $sql = 'SELECT invMake, invModel, invDescription, invPrice, invStock, invColor, invImage FROM inventory WHERE invId = :invId';
+        // $sql = 'SELECT inv.invMake, inv.invModel, inv.invDescription, inv.invPrice, inv.invStock, inv.invColor, (SELECT img.imgPath FROM images img WHERE inv.invId = img.invId AND img.imgPrimary = 1 LIMIT 1) invImage FROM inventory inv WHERE invId = :invId';
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
+        $stmt->execute();
+        $invInfo = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $invInfo;
+    }
 ?>

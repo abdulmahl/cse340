@@ -70,4 +70,17 @@
         $dv .= '</ul>';
         return $dv;
     }
+
+    // This function will build a display of vehicle details.
+    function getVehicleDisplay($vehicleDetails){
+        $dv = "<section class='vehicle-details'>";
+        $dv .= "<img src='$vehicleDetails[invImage]' alt='$vehicleDetails[invMake]-$vehicleDetails[inModel]'>";
+        $dv .= '<h2>Price: $'.number_format($vehicleDetails['invPrice']).'</h2>';
+        $dv .= "<h2>$vehicleDetails[invMake] $vehicleDetails[invModel] Details</h2>";
+        $dv .= "<p>$vehicleDetails[invDescription]</p>";
+        $dv .= "<p>Color: $vehicleDetails[invColor]</p>";
+        $dv .= "<p>Inventory Stock: $vehicleDetails[invStock]</p>";
+        $dv .= '</section>';
+        return $dv;
+    }
 ?>

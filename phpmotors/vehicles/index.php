@@ -208,6 +208,21 @@
             exit;
         break;
 
+        case 'vehicleDisplay':
+            // echo "This is the view";
+            $vehicleId = filter_input(INPUT_GET, 'vehicle', FILTER_SANITIZE_NUMBER_INT);
+
+            $vehicleDetails = getVehicleDetails($vehicleId);
+
+            if($vehicleDetails) {
+                $displayVehicleDetails = getVehicleDisplay($vehicleDetails);
+            } else {
+                $message = '<p> Sorry, no such vehicle exists.</p>';
+            }
+            include '../view/vehicle-details.php';
+            exit;
+        break;
+
         default:
             $classificationList = buildClassificationList($classifications);
             include '../view/vehiclemanager.php';

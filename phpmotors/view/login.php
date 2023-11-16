@@ -79,6 +79,7 @@
         </footer>
     </div>
     <script src="/phpmotors/scripts/index.js"></script>
+    <script src="/phpmotors/scripts/showPassword.js"></script>
     <script src="/phpmotors/scripts/date-time.js"></script>
 
 </body>
