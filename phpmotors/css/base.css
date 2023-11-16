@@ -1,7 +1,7 @@
 :root {
     /* Typography */
     --bodyFontSize: 18px;
-    --fontFamily: 'Comic Neue', sans-serif;
+    --fontFamily: 'Rajdhani', sans-serif;
     --lineHeight: 1.3;
     --bodyFontWeight: 700;
 
@@ -198,7 +198,6 @@ h1.contentTitle {
 
 .welcomeMsg {
     padding: 1rem;
-    font-family: 'Rajdhani';
 }
 
 .descriptionTitle {
@@ -318,7 +317,6 @@ footer p {
 h1.reg {
     text-align: center;
     color: var(--gray1);
-    font-family: 'Rajdhani';
 }
 
 input:required:invalid, input:focus:invalid {
@@ -402,7 +400,6 @@ form div label input {
 .logIn {
     text-align: center;
     padding-top: 2rem;
-    font-family: 'Rajdhani';
 }
 
 .loginCheckBack, .registerCheckBack {
@@ -497,7 +494,6 @@ h1.vehicle-manager {
     text-align: center;
     padding-top: 2rem;
     font-size: 1.7rem;
-    font-family: 'Rajdhani';
 }
 
 a.welcome {
@@ -549,12 +545,10 @@ a.welcome:hover {
     padding: 0 .5rem 0;
     color: var(--blue1);
     font-size: 2.7rem;
-    font-family: 'Rajdhani';
 }
 
 .inv {
     padding: .5rem .5rem 0;
-    font-family: 'Rajdhani';
     
 }
 
@@ -662,7 +656,6 @@ h2.reg {
     text-align: center;
     padding: 1rem;
     color: var(--gray1);
-    font-family: 'Rajdhani';
 }
 
 img.whips {
@@ -696,7 +689,6 @@ img.whips {
 .className {
     text-align: center;
     padding: 1rem 0;
-    font-family: 'Rajdhani';
 }
 
 .vName {
@@ -705,10 +697,6 @@ img.whips {
 
 .invPrice {
     font-size: 1.5rem;
-}
-
-.vByClass {
-    font-family: 'Rajdhani';
 }
 
 .vHeader, .vPrice {
