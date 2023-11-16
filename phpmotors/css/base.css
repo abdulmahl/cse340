@@ -683,6 +683,10 @@ img.whips {
     gap: 1rem;
 }
 
+#inv-display li a {
+    text-decoration: none;
+}
+
 .cardText {
     background: var(--blue1);
     color: var(--gray1);
@@ -696,7 +700,7 @@ img.whips {
 }
 
 .vName {
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 .invPrice {
