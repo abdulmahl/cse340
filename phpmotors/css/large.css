@@ -132,7 +132,8 @@
     }
 
     #inv-display {
-        flex-direction: row;
+        grid-template-columns: repeat(3, 1fr);
+        align-content: center;
     }
 
     img.whips {

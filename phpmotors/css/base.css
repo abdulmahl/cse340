@@ -678,8 +678,7 @@ img.whips {
 }
 
 #inv-display {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     padding: .7rem;
     gap: 1rem;
 }
