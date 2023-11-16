@@ -138,7 +138,7 @@
 
     img.whips {
         object-fit: cover;
-        transition: transform 600ms;
+        transition: transform 800ms;
     }
 
     .imgContainer {
@@ -161,6 +161,10 @@
         gap: 2rem;
         padding: 1rem;
     }
+
+    .vName:hover, .invPrice:hover {
+        text-decoration: line-through;
+    } 
 
     img#displayWhip {
         width: 100%;
