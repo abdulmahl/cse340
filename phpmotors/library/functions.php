@@ -53,7 +53,7 @@
         $dv = '<ul id="inv-display">';
         foreach ($vehicles as $vehicle) {
             $dv .= '<li>';
-            $dv .= "<a href='/phpmotors/vehicles?action=vehicleDisplay&vehicle=$vehicle[invId]'>";
+            $dv .= "<a href='/phpmotors/vehicles/?action=vehicleDisplay&vehicle=$vehicle[invId]'>";
             $dv .= '<div class="card">';
             $dv .= '<div class="cardText">';
             $dv .= "<h2 class='vName'>$vehicle[invMake] $vehicle[invModel]</h2>";
@@ -63,8 +63,8 @@
             $dv .= "<img class='whips' src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
             $dv .= '</div>';
             $dv .= '</div>';
-            $dv .= '<hr>';
             $dv .= '</a>';
+            $dv .= '<hr>';
             $dv .= '</li>';
         }
         $dv .= '</ul>';
