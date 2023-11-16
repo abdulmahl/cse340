@@ -201,15 +201,12 @@
             } else {
                 $vehicleDisplay = buildVehiclesDisplay($vehicles);
             }
-            // echo $vehicleDisplay;
-            // exit;
             
             include '../view/classification.php';
             exit;
         break;
 
         case 'vehicleDisplay':
-            // echo "This is the view";
             $vehicleId = filter_input(INPUT_GET, 'vehicle', FILTER_SANITIZE_NUMBER_INT);
 
             $vehicleDetails = getVehicleDetails($vehicleId);
