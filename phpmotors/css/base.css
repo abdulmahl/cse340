@@ -725,3 +725,7 @@ img#displayWhip {
     margin-left: auto;
     margin-right: auto;
 }
+
+.vehicle-details {
+    padding-bottom: 1rem;
+}

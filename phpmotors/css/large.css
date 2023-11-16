@@ -168,14 +168,16 @@
     }
 
     .vHeader, .vPrice {
-        background: var(--gray3);
+        background-image: linear-gradient(var(--gray3), var(--gray1));
         width: 100%;
+        color: var(--white);
     }
 
     .grayOut, .grayOutDesc, h2.vNameDesc {
-        background: var(--gray3);
+        background-image: linear-gradient(var(--gray3), var(--gray1));
         padding: .56rem;
         width: 100%;
+        color: var(--white);
     }
 
     .leftPart {
