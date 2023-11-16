@@ -11,8 +11,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap"> -->
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text&family=Rajdhani&display=swap"> -->
 </head>
 <body>
 
@@ -50,7 +48,7 @@
                 <img src="/phpmotors/images/delorean.jpg" alt="delorean-image" id="heroImage">
 
                 <div class="ownWrapper">
-                    <a href="#" class="ownToday">Own Today</a>
+                    <a href="/phpmotors/vehicles/?action=classification&classificationName=Classic" class="ownToday">Own Today</a>
                 </div>
             </div>
 
