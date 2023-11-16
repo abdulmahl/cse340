@@ -47,7 +47,7 @@
                 <img src="/phpmotors/images/delorean.jpg" alt="delorean-image" id="heroImage">
 
                 <div class="ownWrapper">
-                    <a href="/phpmotors/vehicles?action=classification&classificationName=Classic" class="ownToday">Own Today</a>
+                    <a href="#" class="ownToday">Own Today</a>
                 </div>
             </div>
 
