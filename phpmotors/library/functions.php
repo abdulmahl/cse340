@@ -21,13 +21,14 @@
         return preg_match($pattern, $clientPassword);
     }
 
+    //? Build dynamic hamburger button (for mobile view port), functionality handled by JS.
     function buildHamBtn() {
         $hamBtn = '<span></span> <span></span> <span></span>';
         return $hamBtn;
     }
 
+    //? Build a dynamic navigation bar using the $classifications array.
     function buildNavBar($classifications) {
-        //? Build a dynamic navigation bar using the $classifications array.
         $navList = '<ul>';
         $navList .= "<li><a href='/phpmotors/' title='View the PHP Motors home page'>Home</a></li>";
         foreach ($classifications as $classification) {
@@ -37,7 +38,7 @@
         return $navList;
     }
 
-    // Build the classifications select list 
+    //? Build the classifications select list using the $classificatins list.
     function buildClassificationList($classifications){ 
         $classificationList = '<select name="classificationId" id="classificationList">'; 
         $classificationList .= "<option>Choose a Classification</option>"; 
@@ -48,7 +49,7 @@
         return $classificationList; 
     }
 
-    // Build a vehicles display list.
+    //? Build a vehicles display list.
     function buildVehiclesDisplay($vehicles){
         $dv = '<ul id="inv-display">';
         foreach ($vehicles as $vehicle) {
@@ -71,7 +72,7 @@
         return $dv;
     }
 
-    // This function will build a display of vehicle details.
+    //? This function will build a display of vehicle details, return the display as HTML.
     function getVehicleDisplay($vehicleDetails){
         $dv = "<section class='vehicle-details'>";
 

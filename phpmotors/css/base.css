@@ -712,7 +712,7 @@ img.whips {
     flex-direction: column;
     gap: 1.5rem;
     background-image: linear-gradient(var(--blue2), var(--blue1));
-    margin: 2rem auto;
+    margin: 2rem 0;
 }
 
 img#displayWhip {
@@ -720,10 +720,6 @@ img#displayWhip {
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
-
-.vehicle-details {
-    padding-bottom: 1rem;
 }
 
 .grayOut, .grayOutDesc, h2.vNameDesc {
