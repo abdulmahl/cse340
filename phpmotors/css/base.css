@@ -700,11 +700,19 @@ img.whips {
 }
 
 .vHeader, .vPrice {
+    background-image: linear-gradient(var(--gray3), var(--gray1));
+    width: 99%;
+    color: var(--white);
     padding: 1rem 1rem 0;
+    margin: 0 auto;  
 }
 
 .rightPart {
-    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-image: linear-gradient(var(--blue2), var(--blue1));
+    margin: 2rem auto;
 }
 
 img#displayWhip {
@@ -716,4 +724,12 @@ img#displayWhip {
 
 .vehicle-details {
     padding-bottom: 1rem;
+}
+
+.grayOut, .grayOutDesc, h2.vNameDesc {
+    background-image: linear-gradient(var(--gray3), var(--gray1));
+    padding: .56rem;
+    width: 99%;
+    margin: 0 auto;
+    color: var(--white);
 }

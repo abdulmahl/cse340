@@ -83,7 +83,7 @@
 
         $dv .= '<div class="rightPart">';
         $dv .= "<h2 class='vNameDesc'>$vehicleDetails[invMake] $vehicleDetails[invModel] Details</h2>";
-        $dv .= "<p class='grayOutDesc'>$vehicleDetails[invDescription]</p>";
+        $dv .= "<p class='grayOutDesc'>Description: $vehicleDetails[invDescription]</p>";
         $dv .= "<p class='grayOut'>Color: $vehicleDetails[invColor]</p>";
         $dv .= "<p class='grayOut'>Inventory Stock: $vehicleDetails[invStock]</p>";
         $dv .= '</div>';
