@@ -55,7 +55,7 @@
         return $rowsChanged;
     }
 
-    // Get vehicles by classificationId 
+    //? Get vehicles by classificationId from the db.
     function getInventoryByClassification($classificationId){ 
         $db = phpmotorsConnect(); 
         $sql = ' SELECT * FROM inventory WHERE classificationId = :classificationId'; 
@@ -67,7 +67,7 @@
         return $inventory; 
     }
 
-    // Get vehicle information by invId
+    //? Get vehicle information by invId from the db.
     function getInvItemInfo($invId){
         $db = phpmotorsConnect();
         $sql = 'SELECT * FROM inventory WHERE invId = :invId';
@@ -122,6 +122,7 @@
         return $rowsChanged;
     }
 
+    //? This function will handle the display of the classifications list.
     function getVehiclesByClassification($classificationName) {
         $db = phpmotorsConnect();
         $sql = 'SELECT * FROM inventory WHERE classificationId IN (SELECT classificationId FROM carclassification WHERE classificationName = :classificationName)';
@@ -133,6 +134,7 @@
         return $vehicles;
     }
 
+    //? This function will get data from the db to display on the document as HTML.
     function getVehicleDetails($invId) {
         $db = phpmotorsConnect();
         $sql = 'SELECT invMake, invModel, invDescription, invPrice, invStock, invColor, invImage FROM inventory WHERE invId = :invId';
