@@ -43,6 +43,10 @@
         display: none;
     }
 
+    .welcomeMsg {
+        font-size: 4rem;
+    }
+
     div.container {
         border: 5px solid var(--blue1);
         width: 90%;
