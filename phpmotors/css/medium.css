@@ -16,7 +16,7 @@
     }
 
     body {
-        background-image: url("../images/site/small_check.jpg");
+        background-image: url("/phpmotors/images/site/small_check.jpg");
         background-repeat: repeat;
         background-position: center;
         background-size: cover;
