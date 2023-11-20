@@ -735,17 +735,21 @@ span.input {
     display: none;
 }
 
-#file1 {
+label input#file1 {
     border: none;
 }
 
 .imgMan {
     text-align: center;
-    padding: 1rem 0;
+    padding-bottom: .7rem;
 }
 
 .imgWelcomeMsg {
     padding-left: .5rem;
+}
+
+.imgWelcomeMsg1 {
+    text-align: center;
 }
 
 .imgH2 {
@@ -770,10 +774,19 @@ fieldset {
 }
 
 select#invId {
-    padding: .75rem;
+    padding: .5rem;
     margin-left: .5rem
 }
 
 .notice {
     padding: 0 .5rem 1rem;
+}
+
+#chooseFile {
+    margin: 0;
+    padding: 0;
+}
+
+#labelbtn {
+    padding-bottom: 1rem;
 }

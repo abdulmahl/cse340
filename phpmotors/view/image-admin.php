@@ -38,11 +38,6 @@
 
         <main>
 
-            <h1 class="imgMan">Image Management</h1>
-            <p class="imgWelcomeMsg">Welcome to the images management page</p>
-            <p class="imgWelcomeMsg">Choose any of the listed options below to manage your images.</p>
-
-            <h2 class="imgH2">Add New Vehicle Image</h2>
             <div class="note">
                 <?php
                     if (isset($message)) {
@@ -50,6 +45,12 @@
                     } 
                 ?>
             </div>
+
+            <h1 class="imgMan">Image Management</h1>
+            <p class="imgWelcomeMsg1">Welcome to the images management page</p>
+            <p class="imgWelcomeMsg1">Choose any of the listed options below to manage your images.</p>
+
+            <h2 class="imgH2">Add New Vehicle Image</h2>
            
             <form action="/phpmotors/uploads/" method="post" enctype="multipart/form-data">
                 <p class="p">Vehicle</p>
@@ -60,8 +61,8 @@
                     <label for="priNo" class="pImage">No<input type="radio" name="imgPrimary" id="priNo" class="pImage" checked value="0"></label>
                 </fieldset>
                 <p class="p">Upload Image:</p>
-                <label for="file1"><input type="file" name="file1" id="file1"><span class="input">input</span></label>
-                <label for="regbtn"><input type="submit" class="regbtn" id="regbtn" value="Upload"><span class="input">input</span></label>
+                <label id="chooseFile" for="file1"><input type="file" name="file1" id="file1"><span class="input">input</span></label>
+                <label id="labelbtn" for="regbtn"><input type="submit" class="regbtn" id="regbtn" value="Upload"><span class="input">input</span></label>
                 <input type="hidden" name="action" value="upload">
             </form>
             <hr>
