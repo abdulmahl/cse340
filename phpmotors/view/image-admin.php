@@ -38,11 +38,11 @@
 
         <main>
 
-            <h1 class="contentTitle">Image Management</h1>
+            <h1 class="imgMan">Image Management</h1>
             <p class="imgWelcomeMsg">Welcome to the images management page</p>
             <p class="imgWelcomeMsg">Choose any of the listed options below to manage your images.</p>
 
-            <h2>Add New Vehicle Image</h2>
+            <h2 class="imgH2">Add New Vehicle Image</h2>
             <div class="note">
                 <?php
                     if (isset($message)) {
@@ -52,20 +52,20 @@
             </div>
            
             <form action="/phpmotors/uploads/" method="post" enctype="multipart/form-data">
-                <p>Vehicle</p>
+                <p class="p">Vehicle</p>
                 <?php echo $prodSelect; ?>
                 <fieldset>
-                    <p>Is this the main image for the vehicle?</p>
+                    <p class="p">Is this the main image for the vehicle?</p>
                     <label for="priYes" class="pImage">Yes<input type="radio" name="imgPrimary" id="priYes" class="pImage" value="1"></label>
                     <label for="priNo" class="pImage">No<input type="radio" name="imgPrimary" id="priNo" class="pImage" checked value="0"></label>
                 </fieldset>
-                <p>Upload Image:</p>
+                <p class="p">Upload Image:</p>
                 <label for="file1"><input type="file" name="file1" id="file1"><span class="input">input</span></label>
                 <label for="regbtn"><input type="submit" class="regbtn" id="regbtn" value="Upload"><span class="input">input</span></label>
                 <input type="hidden" name="action" value="upload">
             </form>
             <hr>
-            <h2>Existing Images</h2>
+            <h2 class="imgH2">Existing Images</h2>
             <p class="imgWelcomeMsg">If deleting an image, delete the thumbnail too and vice versa.</p>
             <?php
                 if (isset($imageDisplay)) {

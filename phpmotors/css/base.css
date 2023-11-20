@@ -734,3 +734,46 @@ img#displayWhip {
 span.input {
     display: none;
 }
+
+#file1 {
+    border: none;
+}
+
+.imgMan {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.imgWelcomeMsg {
+    padding-left: .5rem;
+}
+
+.imgH2 {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.pImage {
+    flex-direction: row;
+    gap: 1rem;
+    padding: .75rem 0;
+    font-size: 1.5rem;
+}
+
+.p {
+    padding: 0 .5rem;
+}
+
+fieldset {
+    width: 99%;
+    margin: .7rem auto;
+}
+
+select#invId {
+    padding: .75rem;
+    margin-left: .5rem
+}
+
+.notice {
+    padding: 0 .5rem 1rem;
+}
