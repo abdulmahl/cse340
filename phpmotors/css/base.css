@@ -790,3 +790,7 @@ select#invId {
 #labelbtn {
     padding-bottom: 1rem;
 }
+
+hr {
+    border-bottom: 3px solid var(--gray1);
+}
