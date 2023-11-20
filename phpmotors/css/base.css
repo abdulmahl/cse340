@@ -730,3 +730,7 @@ img#displayWhip {
     margin: 0 auto;
     color: var(--white);
 }
+
+span.input {
+    display: none;
+}
