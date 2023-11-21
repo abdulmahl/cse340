@@ -717,13 +717,6 @@ img.whips {
     margin: 2rem 0;
 }
 
-img#displayWhip {
-    width: 97%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .grayOut, .grayOutDesc, h2.vNameDesc {
     background-image: linear-gradient(var(--gray3), var(--gray1));
     padding: .56rem;

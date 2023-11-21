@@ -167,7 +167,7 @@
         $image_path_tn = $dir.makeThumbnailName($filename);
     
         // Create a thumbnail image that's a maximum of 200 pixels square
-        resizeImage($image_path, $image_path_tn, 200, 200);
+        resizeImage($image_path, $image_path_tn, 150, 150);
     
         // Resize original to a maximum of 500 pixels square
         resizeImage($image_path, $image_path, 500, 500);
