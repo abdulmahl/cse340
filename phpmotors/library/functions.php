@@ -255,7 +255,7 @@
         foreach ($thumbnailList as $thumbnail) {
             $tnDisplay .= "<img src='$thumbnail[imgPath]' alt='$thumbnail[imgName]'>";
         }
-        $tnDisplay .= "<p>";
+        $tnDisplay .= "</p>";
         return $tnDisplay;
     }
 ?>
