@@ -858,6 +858,10 @@ section.vehicle-details {
     display: grid;
 }
 
+#thumbnail-list img {
+    width: 25%;
+}
+
 #thumbnail-list {
     grid-row: 3;
 }
