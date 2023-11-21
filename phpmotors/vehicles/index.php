@@ -217,7 +217,9 @@
 
             $vehicleDetails = getVehicleDetails($vehicleId);
 
-            
+            // Get the thumbnails for each vehicle.
+            // $thumbnails = getThumbnails($vehicleId);
+            // $thumbnailList = thumbnailDisplay($thumbnails);
 
             if(empty($vehicleDetails)) {
                 $message = '<p> Sorry, no such vehicle exists.</p>';
