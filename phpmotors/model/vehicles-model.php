@@ -126,7 +126,7 @@
     function getVehiclesByClassification($classificationName) {
         $db = phpmotorsConnect();
         // $sql = 'SELECT * FROM inventory WHERE classificationId IN (SELECT classificationId FROM carclassification WHERE classificationName = :classificationName)';
-        $sql = 'SELECT inv.invId, inv.invMake, inv.invModel, inv.invDescription, inv.invPrice, inv.invStock, inv.invColor, inv.classificationId, (SELECT img.imgPath FROM images img WHERE inv.invId = img.invId AND img.imgPrimary = 1 LIMIT 1) invImage, (SELECT img.imgPath FROM images img WHERE inv.invId = img.invId AND img.imgPrimary = 1 AND img.imgPath LIKE '%-tn%' LIMIT 1) invThumbnail FROM inventory inv WHERE inv.classificationId IN (SELECT classificationId FROM carclassification WHERE classificationName = :classificationName)';
+        $sql = "SELECT inv.invId, inv.invMake, inv.invModel, inv.invDescription, inv.invPrice, inv.invStock, inv.invColor, inv.classificationId, (SELECT img.imgPath FROM images img WHERE inv.invId = img.invId AND img.imgPrimary = 1 LIMIT 1) invImage, (SELECT img.imgPath FROM images img WHERE inv.invId = img.invId AND img.imgPrimary = 1 AND img.imgPath LIKE '%-tn%' LIMIT 1) invThumbnail FROM inventory inv WHERE inv.classificationId IN (SELECT classificationId FROM carclassification WHERE classificationName = :classificationName)";
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':classificationName', $classificationName, PDO::PARAM_STR);
         $stmt->execute();
@@ -139,7 +139,6 @@
     function getVehicleDetails($invId) {
         $db = phpmotorsConnect();
         $sql = 'SELECT inv.invMake, inv.invModel, inv.invDescription, inv.invPrice, inv.invStock, inv.invColor, (SELECT img.imgPath FROM images img WHERE inv.invId = img.invId AND img.imgPrimary = 1 LIMIT 1) invImage FROM inventory inv WHERE invId = :invId';
-
         // $sql = 'SELECT invMake, invModel, invDescription, invPrice, invStock, invColor, invImage FROM inventory WHERE invId = :invId';
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
