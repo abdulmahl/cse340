@@ -209,4 +209,14 @@
         height: 100%;
         background-image: linear-gradient(var(--blue2), var(--blue1));
     }
+
+    .imgDel {
+        font-size: 2rem;
+    }
+
+    #image-display {
+        grid-template-columns: repeat(4, 1fr);
+        width: 80%;
+        margin-bottom: 1rem;
+    }
 }

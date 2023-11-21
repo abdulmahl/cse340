@@ -810,3 +810,13 @@ hr {
     list-style: none;
     gap: 0;
 }
+
+#image-display {
+    margin-bottom: 1rem;
+}
+
+.imgDel {
+    text-align: center;
+    padding: 1rem 1rem 0;
+    font-size: 1.3rem;
+}

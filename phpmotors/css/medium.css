@@ -267,6 +267,21 @@
         font-size: 1.7rem;
     }
 
+    .imgDel {
+        font-size: 1.5rem;
+    }
+
+    #image-display {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #image-display  {
+        width: 70%;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+    }
+
     footer p {
         font-size: 1.1rem;
     }
