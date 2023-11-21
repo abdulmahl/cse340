@@ -249,4 +249,13 @@
         // Free any memory associated with the old image
         imagedestroy($old_image);
     } 
+
+    function thumbnailDisplay($thumbnailList){
+        $tnDisplay = "<p id = 'thumbnail-list'>";
+        foreach ($thumbnailList as $thumbnail) {
+            $tnDisplay .= "<img src='$thumbnail[imgPath]' alt='$thumbnail[imgName]'>";
+        }
+        $tnDisplay .= "<p>";
+        return $tnDisplay;
+    }
 ?>
