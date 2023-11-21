@@ -191,7 +191,6 @@
         display: grid;
         grid-template-columns:  15% 40% 1fr;
         gap: .5rem;
-        padding: 0 .5rem;
         align-items: center;
     }
 
@@ -205,8 +204,7 @@
     }
 
     .imgDisplay img {
-        width: 100%;
-        margin-top: .4rem;
+        margin: .5rem 0 0;
     }
 
     .rightPart {
