@@ -46,7 +46,7 @@
                     <div class="descript"><strong>Superman doors</strong> </div>
                     <div class="descript"><strong>Fuzzy dice!</strong></div>
                 </div>
-                <img src="/phpmotors/images/delorean.jpg" alt="delorean-image" id="heroImage">
+                <img src="/phpmotors/images/vehicles/DeLorean-org.jpg" alt="delorean-image" id="heroImage">
 
                 <div class="ownWrapper">
                     <a href="/phpmotors/vehicles/?action=classification&classificationName=Classic" class="ownToday">Own Today</a>
