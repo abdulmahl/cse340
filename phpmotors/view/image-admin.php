@@ -52,7 +52,7 @@
 
             <h2 class="imgH2">Add New Vehicle Image</h2>
            
-            <form action="/phpmotors/uploads/" method="post" enctype="multipart/form-data">
+            <form action="/phpmotors/uploads/" method="post" enctype="multipart/form-data" class="imgFormCont">
                 <p class="p">Vehicle</p>
                 <?php echo $prodSelect; ?>
                 <fieldset>

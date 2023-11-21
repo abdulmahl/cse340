@@ -282,6 +282,15 @@
         margin-bottom: 1rem;
     }
 
+    .imgFormCont {
+        width: 70%;
+        margin:0 auto;
+    }
+
+    #labelbtn {
+        width: 20%;
+    }
+
     footer p {
         font-size: 1.1rem;
     }

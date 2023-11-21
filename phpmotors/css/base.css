@@ -789,6 +789,8 @@ select#invId {
 
 #labelbtn {
     padding-bottom: 1rem;
+    margin-left: .7rem;
+    width: 30%;
 }
 
 hr {
@@ -819,4 +821,10 @@ hr {
     text-align: center;
     padding: 1rem 1rem 0;
     font-size: 1.3rem;
+}
+
+.regbtn {
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
 }
