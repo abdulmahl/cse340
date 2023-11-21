@@ -43,7 +43,7 @@
                 ?>
             </div>
 
-            <?php echo "<h1 class='Header'> $vehicleDetails[invMake] $vehicleDetails[invModel]</h1>";?>
+            <?php echo "<h1 class='vHeader'> $vehicleDetails[invMake] $vehicleDetails[invModel]</h1>";?>
 
             <div class="vehicleDetails">
                 <?php if(isset($displayVehicleDetails)) {

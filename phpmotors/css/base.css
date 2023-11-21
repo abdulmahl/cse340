@@ -701,7 +701,7 @@ img.whips {
     font-size: 1.5rem;
 }
 
-.vHeader, .vPrice {
+.vPrice {
     background-image: linear-gradient(var(--gray3), var(--gray1));
     width: 99%;
     color: var(--white);
@@ -843,4 +843,8 @@ hr {
 #image-display li a:hover {
     color: #ff0000;
     text-decoration: line-through;
+}
+
+.vHeader {
+    padding: 0 1rem;
 }

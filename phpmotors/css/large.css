@@ -168,7 +168,7 @@
         margin: .3rem;
     }
 
-    .vHeader, .vPrice {
+    .vPrice {
         background-image: linear-gradient(var(--gray3), var(--gray1));
         width: 100%;
         color: var(--white);
