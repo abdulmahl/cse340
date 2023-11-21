@@ -848,3 +848,16 @@ hr {
 .vHeader {
     padding: 0 1rem;
 }
+
+.imgDisplay img {
+    width: 100%;
+}
+
+section.vehicle-details {
+    padding: 0 .5rem ;
+    display: grid;
+}
+
+#thumbnail-list {
+    grid-row: 3;
+}

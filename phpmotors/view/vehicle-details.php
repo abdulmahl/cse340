@@ -42,21 +42,26 @@
                     } 
                 ?>
             </div>
+        <?php echo "<h1 class='vHeader'> $vehicleDetails[invMake] $vehicleDetails[invModel]</h1>" ?>
+        <section class='vehicle-details'>
 
-            <?php echo "<h1 class='vHeader'> $vehicleDetails[invMake] $vehicleDetails[invModel]</h1>";?>
-
-            <div class="vehicleDetails">
-                <?php if(isset($displayVehicleDetails)) {
-                    echo $displayVehicleDetails;
+            <?php 
+                if(isset($thumbnailList)) {
+                    echo $thumbnailList;
                     }
-                ?>
+            ?>
+
+            <div class="imgDisplay">
+                <?php echo "<img src='$vehicleDetails[invImage]' alt='$vehicleDetails[invMake]-$vehicleDetails[inModel]'>"; ?>
             </div>
 
-            <!-- <h2>Vehicle Thumbnails</h2> -->
-            <?php if(isset($thumbnailList)) {
-                echo $thumbnailList;
+            <?php if(isset($displayVehicleDetails)) {
+                echo $displayVehicleDetails;
                 }
             ?>
+                    
+        </section>
+
 
         </main>
 

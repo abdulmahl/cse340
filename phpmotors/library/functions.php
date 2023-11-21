@@ -72,21 +72,23 @@
 
     //? This function will build a display of vehicle details, return the display as HTML.
     function getVehicleDisplay($vehicleDetails){
-        $dv = "<section class='vehicle-details'>";
-
-        $dv .= '<div class="leftPart">';
-        $dv .= "<img id='displayWhip' src='$vehicleDetails[invImage]' alt='$vehicleDetails[invMake]-$vehicleDetails[inModel]'>";
-        $dv .= '</div>';
-
         $dv .= '<div class="rightPart">';
         $dv .= '<h2 class="vPrice">Price: $'.number_format($vehicleDetails['invPrice']).'</h2>';
         $dv .= "<p class='grayOutDesc'>Description: $vehicleDetails[invDescription]</p>";
         $dv .= "<p class='grayOut'>Color: $vehicleDetails[invColor]</p>";
         $dv .= "<p class='grayOut'>Inventory Stock: $vehicleDetails[invStock]</p>";
         $dv .= '</div>';
-
-        $dv .= '</section>';
         return $dv;
+    }
+
+    function thumbnailDisplay($thumbnailList){
+        $tnDisplay = "<div id='thumbnail-list'>";
+        $tnDisplay .= '<h2 class="vTN">Vehicle Thumbnails</h2>';
+        foreach ($thumbnailList as $thumbnail) {
+            $tnDisplay .= "<img src='$thumbnail[imgPath]' alt='$thumbnail[imgName]'>";
+        }
+        $tnDisplay .= "</div>";
+        return $tnDisplay;
     }
 
     //* * ******************************** *//
@@ -247,13 +249,4 @@
         // Free any memory associated with the old image
         imagedestroy($old_image);
     } 
-
-    function thumbnailDisplay($thumbnailList){
-        $tnDisplay = "<p id='thumbnail-list'>";
-        foreach ($thumbnailList as $thumbnail) {
-            $tnDisplay .= "<img src='$thumbnail[imgPath]' alt='$thumbnail[imgName]'>";
-        }
-        $tnDisplay .= "</p>";
-        return $tnDisplay;
-    }
 ?>
