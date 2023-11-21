@@ -769,8 +769,8 @@ label input#file1 {
 }
 
 fieldset {
-    width: 99%;
-    margin: .7rem auto;
+    width: 100%;
+    margin: .7rem;
 }
 
 select#invId {
@@ -803,6 +803,10 @@ hr {
     margin-left: auto;
     margin-right: auto;
     margin: 1.5rem 0 0;
+}
+
+.imgFormCont {
+    width: 95%;
 }
 
 #image-display li {
