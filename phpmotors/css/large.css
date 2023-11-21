@@ -144,19 +144,8 @@
         align-content: center;
     }
 
-    img.whips {
-        object-fit: cover;
-        transition: transform 800ms;
-    }
-
-    .imgContainer {
+    .card {
         width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    .imgContainer:hover img{
-        transform: scale(1.5);
     }
 
     footer p {

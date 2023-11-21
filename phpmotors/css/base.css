@@ -660,7 +660,6 @@ h2.reg {
 }
 
 img.whips {
-    width: 100%;
     display: block;
     margin: .3rem auto;
     border: .3rem solid var(--gray1);
@@ -685,6 +684,7 @@ img.whips {
     background: var(--blue1);
     color: var(--gray1);
     padding: .1rem .7rem;
+    text-align: center;
 }
 
 .className {
@@ -693,6 +693,7 @@ img.whips {
 }
 
 .vName {
+    text-align: center;
     font-size: 1.7rem;
 }
 
@@ -840,6 +841,6 @@ hr {
 }
 
 #image-display li a:hover {
-    color: #f00;
+    color: #ff0000;
     text-decoration: line-through;
 }

@@ -57,11 +57,11 @@
             $dv .= "<a href='/phpmotors/vehicles/?action=vehicleDisplay&vehicle=$vehicle[invId]'>";
             $dv .= '<div class="card">';
             $dv .= '<div class="cardText">';
+            $dv .= "<img class='whips' src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
             $dv .= "<h2 class='vName'>$vehicle[invMake] $vehicle[invModel]</h2>";
             $dv .= '<span class="invPrice">$'.number_format($vehicle['invPrice']).'</span>';
             $dv .= '</div>';
             $dv .= '<div class="imgContainer">';
-            $dv .= "<img class='whips' src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
             $dv .= '</div>';
             $dv .= '</div>';
             $dv .= '</a>';
@@ -79,7 +79,7 @@
         $dv .= '<div class="leftPart">';
         $dv .= "<h1 class='vHeader'> $vehicleDetails[invMake] $vehicleDetails[invModel] </h1>";
         $dv .= "<img id='displayWhip' src='$vehicleDetails[invImage]' alt='$vehicleDetails[invMake]-$vehicleDetails[inModel]'>";
-        $dv .= '<h2 class="vPrice">Price: $'.number_format($vehicleDetails['invPrice'], 2, '.').'</h2>';
+        $dv .= '<h2 class="vPrice">Price: $'.number_format($vehicleDetails['invPrice']).'</h2>';
         $dv .= '</div>';
 
         $dv .= '<div class="rightPart">';
