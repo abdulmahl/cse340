@@ -43,10 +43,7 @@
                 ?>
             </div>
 
-            <?php if(isset($thumbnailList)) {
-                echo $thumbnailList;
-                }
-            ?>
+            <?php echo "<h1 class='Header'> $vehicleDetails[invMake] $vehicleDetails[invModel]</h1>";?>
 
             <div class="vehicleDetails">
                 <?php if(isset($displayVehicleDetails)) {
@@ -54,6 +51,12 @@
                     }
                 ?>
             </div>
+
+            <!-- <h2>Vehicle Thumbnails</h2> -->
+            <?php if(isset($thumbnailList)) {
+                echo $thumbnailList;
+                }
+            ?>
 
         </main>
 
