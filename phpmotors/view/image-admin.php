@@ -67,7 +67,9 @@
             </form>
             <hr>
             <h2 class="imgH2">Existing Images</h2>
-            <p class="imgDel">If deleting an image, delete the thumbnail too and vice versa.</p>
+            <p class="imgDel">When deleting an image, delete the thumbnail too and vice versa.
+                This action cannot be undone!
+            </p>
             <?php
                 if (isset($imageDisplay)) {
                     echo $imageDisplay;

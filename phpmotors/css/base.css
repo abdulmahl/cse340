@@ -823,6 +823,7 @@ hr {
 
 .imgDel {
     text-align: center;
+    color: #ff0000;
     padding: 1rem 1rem 0;
     font-size: 1.3rem;
 }
@@ -831,4 +832,14 @@ hr {
     border: none;
     border-radius: 0;
     cursor: pointer;
+}
+
+#image-display li a {
+    color: var(--gray1);
+    text-decoration: none;
+}
+
+#image-display li a:hover {
+    color: #f00;
+    text-decoration: line-through;
 }
