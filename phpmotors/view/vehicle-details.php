@@ -43,8 +43,16 @@
                 ?>
             </div>
 
+            <?php if(isset($thumbnailList)) {
+                echo $thumbnailList;
+                }
+            ?>
+
             <div class="vehicleDetails">
-                <?php echo $displayVehicleDetails; ?>
+                <?php if(isset($displayVehicleDetails)) {
+                    echo $displayVehicleDetails;
+                    }
+                ?>
             </div>
 
         </main>

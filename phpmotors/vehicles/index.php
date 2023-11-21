@@ -15,6 +15,12 @@
     //? Get the vehicles model.
     require_once '../model/vehicles-model.php';
 
+    //? Get the accounts model.
+    require_once '../model/accounts-model.php';
+
+    //? Get the uploads model.
+    require_once '../model/uploads-model.php';
+
     //? Get the array classifications.
     $classifications = getClassifications();
 
@@ -211,10 +217,12 @@
 
             $vehicleDetails = getVehicleDetails($vehicleId);
 
-            if($vehicleDetails) {
-                $displayVehicleDetails = getVehicleDisplay($vehicleDetails);
-            } else {
+            
+
+            if(empty($vehicleDetails)) {
                 $message = '<p> Sorry, no such vehicle exists.</p>';
+            } else {
+                $displayVehicleDetails = getVehicleDisplay($vehicleDetails);
             }
             include '../view/vehicle-details.php';
             exit;
