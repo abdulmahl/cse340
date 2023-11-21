@@ -251,7 +251,7 @@
     } 
 
     function thumbnailDisplay($thumbnailList){
-        $tnDisplay = "<p id = 'thumbnail-list'>";
+        $tnDisplay = "<p id='thumbnail-list'>";
         foreach ($thumbnailList as $thumbnail) {
             $tnDisplay .= "<img src='$thumbnail[imgPath]' alt='$thumbnail[imgName]'>";
         }
