@@ -13,7 +13,7 @@
     <title><?php if(isset($invInfo['invMake'])) {
         echo "Delete $invInfo[invMake] $invInfo[invModel]";
     } ?> &bull; PHP Motors</title>
-
+    <link rel="shortcut icon" href="favicon.ico"> 
     <link rel="stylesheet" href="/phpmotors/css/base.css">
     <link rel="stylesheet" href="/phpmotors/css/medium.css">
     <link rel="stylesheet" href="/phpmotors/css/large.css">
