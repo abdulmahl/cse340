@@ -189,7 +189,7 @@
 
     section.vehicle-details {
         display: grid;
-        grid-template-columns:  15% 40% 1fr;
+        grid-template-columns:  12.5% 40% 1fr;
         gap: .5rem;
         align-items: center;
     }
@@ -204,9 +204,8 @@
     }
 
     .imgDisplay img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        /* width: 100%; */
+        /* height: 100%; */
         margin: .5rem 0 0;
     }
 

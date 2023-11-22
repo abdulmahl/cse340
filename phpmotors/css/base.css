@@ -858,3 +858,7 @@ section.vehicle-details {
 #thumbnail-list {
     grid-row: 3;
 }
+
+#thumbnail-list img {
+    margin: 0 .5rem 0 0;
+}
