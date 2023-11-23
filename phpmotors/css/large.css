@@ -15,13 +15,6 @@
        --white: #fff;
     }
 
-    body {
-        background-image: url("../images/site/small_check.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    }
-
     img#logo {
         width: 17rem;
     }
@@ -195,7 +188,8 @@
     }
 
     #thumbnail-list img {
-        width: 100%;
+        width: 99%;
+        margin-top: .35rem;
     }
 
     #thumbnail-list img:hover {
