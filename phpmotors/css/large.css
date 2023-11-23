@@ -198,6 +198,10 @@
         width: 100%;
     }
 
+    #thumbnail-list img:hover {
+        transform: scale(1.5);
+    }
+
     #thumbnail-list {
         grid-row: 1;
     }
