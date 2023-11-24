@@ -1,5 +1,5 @@
 # Build and Release Folders
-.DS_Store
+.DS_Store/
 bin-debug/
 bin-release/
 [Oo]bj/

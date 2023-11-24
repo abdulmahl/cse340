@@ -63,4 +63,6 @@
 
     echo($newAmerica);
 
+    echo date("l");
+
 ?>
