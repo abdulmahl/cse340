@@ -86,6 +86,9 @@
                     ?>
                 </div>
             </div>
+
+            <h3>Your reviews</h3>
+            <?php echo $reviewDisplay;?>
             
         </main>
 

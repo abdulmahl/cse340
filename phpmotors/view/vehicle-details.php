@@ -59,6 +59,26 @@
                 echo $displayVehicleDetails;
                 }
             ?>
+
+            <h3 class="customerRev">Customer Review</h3>
+            <?php 
+                if (!$_SESSION['loggedin']){
+                    echo '<p class="revLogin">Please <a href="/phpmotors/accounts/?action=login">login</a> to create a review.</p>';
+                }
+                if (isset($_SESSION['message'])) {
+                    echo $_SESSION['message'];
+                }
+            ?>
+
+            <form action="/phpmotors/reviews/index.php" method="POST" <?php if (!$_SESSION['loggedin']){echo "hidden";} ?>>
+                <label>Add a review: <textarea id="review" name="newReview" rows="4" cols="50" <?php if(isset($clientFirstname)){echo "value='$clientFirstname'";}  ?> required></textarea></label>
+                <br>
+                <button class="regButton">Add Review</button>
+                <br>
+                <input type="hidden" name="action" value="addReview">
+                <input type="hidden" name="userId" <?php echo 'value="'.$_SESSION['clientData']['clientId'].'"'; ?>>
+                <input type="hidden" name="carId" <?php echo 'value="'.$vehicleId.'"'; ?>>
+            </form>
                     
         </section>
 

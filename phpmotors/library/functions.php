@@ -249,4 +249,27 @@
         // Free any memory associated with the old image
         imagedestroy($old_image);
     } 
+
+    //? The function builds a display for reviews and returns them as HTML.
+    function buildReviewDisplay($clientFirstName, $clientLastName, $reviewDate, $reviewText){
+        $reviewDisplay = "<p>";
+        $reviewDisplay .= substr($clientFirstName, 0, 1).". ".$clientLastName;
+        $timestamp = strtotime($reviewDate);
+        $reviewDisplay .= "<br>Posted on: ".date('m/d/Y H:i:s', $timestamp);
+        $reviewDisplay .= "<br><br>".$reviewText;
+        $reviewDisplay .= "</p>";
+        return $reviewDisplay;
+    }
+
+    //? The function builds display as HTML and returns a list of items.
+    function buildListItem($reviewDate, $reviewId) {
+        $listItems = '<li>';
+        $timestamp = strtotime($reviewDate);
+        $listItems .= 'Review Created on: '.date('m/d/Y H:i:s', $timestamp);
+        $listItems .= ' <a href = "/reviews/index.php?action=confirmEdit&review='.$reviewId.'">Edit</a>';
+        $listItems .= ' &bull; ';
+        $listItems .= '<a href = "/reviews/index.php?action=confirmDelete&review='.$reviewId.'">Delete</a>';
+        $listItems .= '</li>';
+        return $listItems;
+    }
 ?>

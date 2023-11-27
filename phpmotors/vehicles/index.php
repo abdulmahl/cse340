@@ -21,7 +21,10 @@
     //? Get the uploads model.
     require_once '../model/uploads-model.php';
 
-    //? Get the array classifications.
+    //? Get the reviews model into the scope.
+    require_once '../model/reviews-model.php';
+
+    //? Get the array of classifications.
     $classifications = getClassifications();
 
     //? build dynamic hamburger button.
@@ -217,9 +220,18 @@
 
             $vehicleDetails = getVehicleDetails($vehicleId);
 
-            // Get the thumbnails for each vehicle.
+            //? Get the thumbnails for each vehicle.
             $thumbnails = getThumbnails($vehicleId);
             $thumbnailList = thumbnailDisplay($thumbnails);
+
+            //? Get the reviews displayed in the vehicle view.
+            $itemList = getInvReviews($vehicleId);
+
+            $reviewDisplay = '<div class="displayReviews">';
+            foreach($itemList as $item) {
+                $reviewDisplay .= buildReviewDisplay($item['clientFirstname'], $item['clientLastname'], $item['reviewDate'], $item['reviewText']);
+            }
+            $reviewDisplay .= '</div>';
 
             if(empty($vehicleDetails)) {
                 $message = '<p> Sorry, no such vehicle exists.</p>';
