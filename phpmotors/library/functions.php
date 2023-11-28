@@ -251,24 +251,28 @@
     } 
 
     //? The function builds a display for reviews and returns them as HTML.
+    //? Called in the vehicles controller.
     function buildReviewDisplay($clientFirstName, $clientLastName, $reviewDate, $reviewText){
-        $reviewDisplay = "<p>";
-        $reviewDisplay .= substr($clientFirstName, 0, 1).". ".$clientLastName;
+        $reviewDetails = "<p class='displayRevs'>";
+        $reviewDetails .= substr($clientFirstName, 0, 1).". ".$clientLastName;
         $timestamp = strtotime($reviewDate);
-        $reviewDisplay .= "<br>Posted on: ".date('m/d/Y H:i:s', $timestamp);
-        $reviewDisplay .= "<br><br>".$reviewText;
-        $reviewDisplay .= "</p>";
-        return $reviewDisplay;
+        $day = date('M/d/Y @ H:i:s', $timestamp);
+        $reviewDetails .= "<br>Wrote on: ($day)";
+        $reviewDetails .= "<br>".$reviewText;
+        $reviewDetails .= "</p>";
+        return $reviewDetails;
     }
 
     //? The function builds display as HTML and returns a list of items.
+    //? Called in accounts controller!
     function buildListItem($reviewDate, $reviewId) {
-        $listItems = '<li>';
+        $listItems = '<li class=credentials>';
         $timestamp = strtotime($reviewDate);
-        $listItems .= 'Review Created on: '.date('m/d/Y H:i:s', $timestamp);
-        $listItems .= ' <a href = "/reviews/index.php?action=confirmEdit&review='.$reviewId.'">Edit</a>';
+        $day = date('M/d/Y @ H:i:s', $timestamp);
+        $listItems .= "(Reviewed on: $day) ";
+        $listItems .= '<a href = "/reviews/index.php?action=edit&reviewId='.$reviewId.'">Edit</a>';
         $listItems .= ' &bull; ';
-        $listItems .= '<a href = "/reviews/index.php?action=confirmDelete&review='.$reviewId.'">Delete</a>';
+        $listItems .= '<a href = "/reviews/index.php?action=delete&reviewId='.$reviewId.'">Delete</a>';
         $listItems .= '</li>';
         return $listItems;
     }

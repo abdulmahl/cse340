@@ -2,11 +2,6 @@
     if(!$_SESSION['loggedin']) {
         header('Location: /phpmotors/index.php/');
     }
-
-
-    if(isset($_SESSION['message'])) {
-        $message = $_SESSION['message'];
-    }
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,8 +65,8 @@
                     <?php 
                         if($_SESSION['loggedin']) {
                             echo '<h2 class="inv">Account Management</h2>
-                                <span class="updateInv">Use this link to update your account details</span> <br>
-                                <a href="/phpmotors/accounts/index.php/?action=update" class="levelClientLink">Account Management</a>';
+                            <span class="updateInv">Use this link to update your account details</span> <br>
+                            <a href="/phpmotors/accounts/index.php/?action=update" class="levelClientLink">Account Management</a>';
                         }
                     ?>
                 </div>
@@ -80,15 +75,15 @@
                     <?php 
                         if($_SESSION['clientData']['clientLevel'] > 1) {
                             echo '<h2 class="inv">Inventory Management</h2>
-                                <span class="updateInv">Use this link to update the inventory</span> <br>
-                                <a href="/phpmotors/vehicles" class="levelClientLink">Vehicle Management</a>';
+                            <span class="updateInv">Use this link to update the inventory</span> <br>
+                            <a href="/phpmotors/vehicles" class="levelClientLink">Vehicle Management</a>';
                         }
                     ?>
                 </div>
             </div>
 
-            <h3>Your reviews</h3>
-            <?php echo $reviewDisplay;?>
+            <h2 class="inv">Manage Your Product Reviews</h2>
+            <?php echo $vehicleName, $reviewDetails;?>
             
         </main>
 

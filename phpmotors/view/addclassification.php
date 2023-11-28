@@ -1,5 +1,5 @@
 <?php 
-    if($_SESSION['clientData']['clientLevel'] < 2) {
+    if(!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] < 2) {
         header('Location: /phpmotors/index.php/');
         exit;
     }

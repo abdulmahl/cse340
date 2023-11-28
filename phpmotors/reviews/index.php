@@ -42,7 +42,8 @@
             // Check for any missing input data.
             if(empty($newReview) || empty($clientId) || empty($vehicleId)) {
                 $message = '<p>Please provide information for all empty form fields.</p>';
-                header('Location: /phpmotors/reviews/');
+                header('Location: ' . $_SERVER['HTTP_REFERER']);
+                exit;
             }
 
             // Send data  to the model.
@@ -50,10 +51,11 @@
 
             if($newReviewOutcome === 1) {
                 $message = '<p>Review added successfully!</p>';
-                header('Location: /phpmotors/reviews/');
+                header('Location: ' . $_SERVER['HTTP_REFERER']);
+                exit;
             } else {
                 $message = '<p>Sorry, review not added. Please try again!</p>';
-                header('Location: /phpmotors/reviews/');
+                header('Location: ' . $_SERVER['HTTP_REFERER']);
                 exit;
             }
             break;
@@ -77,7 +79,7 @@
             if($reviewUpdateOutcome === 1) {
                 $_SEESSION['message'] = '<p>Review update was a success!</p>';
             } else {
-                $_SESSION['message'] = '<p>Sorry, update did not occure. Please try again!</p>';
+                $_SESSION['message'] = "<p>Sorry, update did not occure. Please try again!</p>".$deleteOutcome;
             }
 
             header('Location: /phpmotors/accounts/');
@@ -99,15 +101,15 @@
             // Filter / get input.
             $reviewId = filter_input(INPUT_POST, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
 
-            $deleteReport = deleteReview($reviewId);
+            $deleteOutcome = deleteReview($reviewId);
 
-            if ($deleteReport == 1){
+            if ($deleteOutcome === 1){
                 $_SESSION['message'] = "<p>Review successfully deleted.</p>";
             } else {
-                $_SESSION['message'] = "<p>Sorry, review not deleted. Please try again.</p>".$deleteReport;
+                $_SESSION['message'] = "<p>Sorry, review not deleted. Please try again.</p>".$deleteOutcome;
             }
 
-            header('location: /accounts/');
+            header('Location: /phpmotors/accounts/');
             exit;
             break;
 
@@ -117,7 +119,7 @@
 
             $review = getReview($reviewId);
 
-            include '../view/confirm-delete.php';
+            include '../view/delete-review.php';
             break;
 
         default:
@@ -125,7 +127,7 @@
                 include '../view/admin.php';
                 exit;
             }
-            header('Location: /index.php/');
+            header('Location: /phpmotors/index.php/');
             exit;
             break;
     }

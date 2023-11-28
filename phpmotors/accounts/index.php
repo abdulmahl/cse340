@@ -16,6 +16,10 @@
     //? Get the accounts model.
     require_once '../model/accounts-model.php';
 
+    require_once '../model/reviews-model.php';
+
+    require_once '../model/vehicles-model.php';
+
     //? Get the array classifications.
     $classifications = getClassifications();
 
@@ -121,6 +125,22 @@
             array_pop($clientData);
             // Store the array into the session
             $_SESSION['clientData'] = $clientData;
+
+            $vehicles = getVehicles();
+            $vehicleName = '<p>';
+            foreach($vehicles as $vehicle) {
+                $vehicleName .= "$vehicle[invMake] $vehicle[invModel]";
+            }
+            $vehicleName .= '</p>';
+
+            // Get the list of reviews for the client.
+            $reviews = getClientReviews($_SESSION['clientData']['clientId']);
+            $reviewDetails = '<ul>';
+            foreach($reviews as $review){
+                $reviewDetails .= buildListItem($review['reviewDate'], $review['reviewId']);
+            }
+            $reviewDetails .= '</ul>';
+
             // Send them to the admin view
             include '../view/admin.php';
             exit;
@@ -230,7 +250,15 @@
         break;
 
         default:
+            // Get the list of reviews for the client.
+            $reviews = getClientReviews($_SESSION['clientData']['clientId']);
+            $reviewDetails = '<ul>';
+            foreach($reviews as $review){
+                $reviewDetails .= buildListItem($review['reviewDate'], $review['reviewId']);
+            }
+            $reviewDetails .= '</ul>';
             include '../view/admin.php';
+            exit;
         break;
     }
 ?>

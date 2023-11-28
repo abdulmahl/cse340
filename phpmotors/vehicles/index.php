@@ -151,12 +151,12 @@
             if ($deleteResult) {
                 $message = "<p>Congratulations the, $invMake $invModel was	successfully deleted.</p>";
                 $_SESSION['message'] = $message;
-                header('location: /phpmotors/vehicles/');
+                header('Location: /phpmotors/vehicles/');
                 exit;
             } else {
                 $message = "<p>Error: $invMake $invModel was not deleted.</p>";
                 $_SESSION['message'] = $message;
-                header('location: /phpmotors/vehicles/');
+                header('Location: /phpmotors/vehicles/');
                 exit;
             }
         break;
@@ -225,11 +225,11 @@
             $thumbnailList = thumbnailDisplay($thumbnails);
 
             //? Get the reviews displayed in the vehicle view.
-            $itemList = getInvReviews($vehicleId);
+            $reviews = getInvReviews($vehicleId);
 
             $reviewDisplay = '<div class="displayReviews">';
-            foreach($itemList as $item) {
-                $reviewDisplay .= buildReviewDisplay($item['clientFirstname'], $item['clientLastname'], $item['reviewDate'], $item['reviewText']);
+            foreach($reviews as $review) {
+                $reviewDisplay .= buildReviewDisplay($review['clientFirstname'], $review['clientLastname'], $review['reviewDate'], $review['reviewText']);
             }
             $reviewDisplay .= '</div>';
 

@@ -52,7 +52,7 @@
             <form action="/phpmotors/reviews/index.php" method="POST" <?php if(!$_SESSION['loggedin']) { echo "hidden"; } ?>>
                     <label for="regname">Registered name: <input type="text" name="clientFirstname" id="regname" <?php echo 'value="'.substr($review['clientFirstname'], 0, 1).". ".$review['clientFirstname'].'"';?> readonly></label>
                     <label for="updatedReview">Review Updated on: <input type="text" name="reviewDate" id="updatedReview" <?php echo 'value="'.$review['reviewDate'].'"';?> readonly></label>
-                    <label for="editReview">Add Review: <textarea name="reviewText" id="editReview" cols="30" rows="10" required><?php echo $review['reviewText'];?></textarea></label>
+                    <label for="editReview">Add Review: <textarea name="reviewText" id="editReview" cols="30" rows="10" readonly><?php echo $review['reviewText'];?></textarea></label>
 
                     <input type="submit" name="submit" id="regbtn" value="Delete Review">
                     <input type="hidden" name="action" value="deleteReview">

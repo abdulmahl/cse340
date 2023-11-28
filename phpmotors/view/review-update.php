@@ -38,7 +38,7 @@
         </nav>
 
         <main>
-            <h1 class="">Update Reviews</h1>
+            <h1 class="">Update Review</h1>
             <p class="">Update your review</p>
 
             <div class="note"> 
@@ -50,10 +50,10 @@
             </div>
             <form action="/phpmotors/reviews/index.php" method="POST" <?php if(!$_SESSION['loggedin']) { echo "hidden"; } ?>>
                     <label for="regname">Registered name: <input type="text" name="clientFirstname" id="regname" <?php echo 'value="'.substr($review['clientFirstname'], 0, 1).". ".$review['clientFirstname'].'"';?> readonly></label>
-                    <label for="updatedReview">Review Updated on: <input type="text" name="reviewDate" id="updatedReview" <?php echo 'value="'.$review['reviewDate'].'"';?> readonly></label>
+                    <label for="updatedReview">Review Posted on: <input type="text" name="reviewDate" id="updatedReview" <?php echo 'value="'.$review['reviewDate'].'"';?> readonly></label>
                     <label for="editReview">Add Review: <textarea name="reviewText" id="editReview" cols="30" rows="10" required><?php echo $review['reviewText'];?></textarea></label>
 
-                    <input type="submit" name="submit" id="regbtn" value="Update Review">
+                    <button class="regbtn">Update Review</button>
                     <input type="hidden" name="action" value="editReview">
                     <input type="hidden" name="reviewId" <?php echo 'value="'.$reviewId.'"'; ?>>
             </form>

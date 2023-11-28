@@ -16,9 +16,9 @@
     }
 
     //? This function will handle getting inventory information from the DB.
-    function getInvReviews() {
+    function getInvReviews($invId) {
         $db = phpmotorsConnect();
-        $sql = 'SELECT r.reviewId, r.reviewText, r.reviewDate, r.invId, r.clientId, c.clientFirstname, c.clientLastname FROM reviews r INNER JOIN clients c ON c.clientId = r.clientId WHERE invId = :invId';
+        $sql = "SELECT r.reviewId, r.reviewText, r.reviewDate, r.invId, r.clientId, c.clientFirstname, c.clientLastname FROM reviews r INNER JOIN clients c ON c.clientId = r.clientId WHERE invId = :invId";
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
         $stmt->execute();
