@@ -43,9 +43,8 @@
 
             // Check for any missing input data.
             if(empty($newReview) || empty($clientId) || empty($vehicleId)) {
-                $message = '<p>Please provide information for all empty form fields.</p>';
+                $_SESSION['message'] = '<p>Please provide information for all empty form fields.</p>';
                 include '../view/vehicle-details.php';
-                // header('Location: /phpmotors/vehicles/');
                 exit;
             }
 
@@ -53,11 +52,12 @@
             $newReviewOutcome = addReview($newReview, $clientId, $vehicleId);
 
             if($newReviewOutcome === 1) {
-                $message = '<p>Review added successfully!</p>';
+                echo "Successfully added review!";
+                $_SESSION['message'] = '<p>Review added successfully!</p>';
                 header('Location: /phpmotors/accounts');
                 exit;
             } else {
-                $message = '<p>Sorry, review not added. Please try again!</p>';
+                $_SESSION['message'] = '<p>Sorry, review not added. Please try again!</p>';
                 header('Location: /phpmotors/accounts/');
                 exit;
             }
@@ -65,18 +65,18 @@
 
         case 'editReview':
             // Get and filter input.
-            $reviewId = filter_input(INPUT_POST, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
             $reviewText = filter_input(INPUT_POST, 'reviewText', FILTER_SANITIZE_STRING);
+            $reviewId = filter_input(INPUT_POST, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
 
             // Check for missing data.
-            if(empty($reviewId) || empty($reviewText)) {
-                $message = '<p>Please provide information for all empty form fields.</p>';
+            if(empty($reviewText) || empty($reviewId)) {
+                $_SESSION['message'] = '<p>Please provide information for all empty form fields to make a review.</p>';
                 include '../view/review-update.php';
                 exit;
             }
 
             // Add data to the model.
-            $reviewUpdateOutcome = updateReview($reviewId, $reviewText);
+            $reviewUpdateOutcome = updateReview($reviewText, $reviewId);
 
             //Check and report the outcome of the update.
             if($reviewUpdateOutcome === 1) {

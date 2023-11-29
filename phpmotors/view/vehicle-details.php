@@ -77,20 +77,12 @@
                 
                 <h3 class="customerRev">CustomerReviews</h3>
                 <?php if($_SESSION['loggedin']) echo "<h3 class='customerRev'>Review the $vehicleDetails[invMake] $vehicleDetails[invModel]</h3>"; ?>
-           
-                <div class="note1">
-                    <?php 
-                        if(isset($message)) {
-                            echo $message;
-                        } 
-                    ?>
-                </div>
 
                 <form action="/phpmotors/reviews/index.php" method="POST" <?php if (!$_SESSION['loggedin']){echo "hidden";} ?>>
                     <?php
                     $screenName = substr($_SESSION['clientData']['clientFirstname'], 0, 1) . $_SESSION['clientData']['clientLastname'];
                     echo "<label><strong>Screen Name: </strong><input value='$screenName' readonly></label>";?>
-                    <label>Add a review: <textarea id="review" name="newReview" rows="4" cols="10" required></textarea></label>
+                    <label for="review">Add a review: <textarea id="review" name="newReview" rows="4" cols="10" required></textarea></label>
                     <br>
                     <button class="regButton">Add Review</button>
                     <br>
