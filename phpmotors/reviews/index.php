@@ -42,7 +42,8 @@
             // Check for any missing input data.
             if(empty($newReview) || empty($clientId) || empty($vehicleId)) {
                 $message = '<p>Please provide information for all empty form fields.</p>';
-                header('Location: ' . $_SERVER['HTTP_REFERER']);
+                include '../view/vehicle-details.php';
+                // header('Location: /phpmotors/vehicles/');
                 exit;
             }
 
@@ -51,11 +52,11 @@
 
             if($newReviewOutcome === 1) {
                 $message = '<p>Review added successfully!</p>';
-                header('Location: ' . $_SERVER['HTTP_REFERER']);
+                header('Location: /phpmotors/accounts');
                 exit;
             } else {
                 $message = '<p>Sorry, review not added. Please try again!</p>';
-                header('Location: ' . $_SERVER['HTTP_REFERER']);
+                header('Location: /phpmotors/accounts/');
                 exit;
             }
             break;
@@ -79,7 +80,7 @@
             if($reviewUpdateOutcome === 1) {
                 $_SEESSION['message'] = '<p>Review update was a success!</p>';
             } else {
-                $_SESSION['message'] = "<p>Sorry, update did not occure. Please try again!</p>".$deleteOutcome;
+                $_SESSION['message'] = "<p>Sorry, update did not occure. Please try again!</p>";
             }
 
             header('Location: /phpmotors/accounts/');
@@ -106,7 +107,7 @@
             if ($deleteOutcome === 1){
                 $_SESSION['message'] = "<p>Review successfully deleted.</p>";
             } else {
-                $_SESSION['message'] = "<p>Sorry, review not deleted. Please try again.</p>".$deleteOutcome;
+                $_SESSION['message'] = "<p>Sorry, review not deleted. Please try again.</p>";
             }
 
             header('Location: /phpmotors/accounts/');

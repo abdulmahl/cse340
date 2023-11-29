@@ -869,3 +869,24 @@ p.displayRevs {
     background-color: var(--blue2);
     margin: .5rem 0;
 }
+
+p.revLogin {
+    padding: .7rem 0;
+}
+
+h3.customerRev {
+    padding: .3rem;
+}
+
+p.revLogin a {
+    text-decoration: line-through;
+    color: var(--gray1);
+}
+
+p.revLogin a:hover {
+    text-decoration: none;
+    color: var(--blue1);
+    background: var(--gray3);
+    padding: 0 .3rem;
+    transition: all 1s ease;
+}

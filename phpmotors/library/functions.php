@@ -270,9 +270,9 @@
         $timestamp = strtotime($reviewDate);
         $day = date('M/d/Y @ H:i:s', $timestamp);
         $listItems .= "(Reviewed on: $day) ";
-        $listItems .= '<a href = "/reviews/index.php?action=edit&reviewId='.$reviewId.'">Edit</a>';
+        $listItems .= '<a href = "/phpmotors/reviews/index.php?action=edit&reviewId='.urlencode($reviewId['reviewId']).'">Edit</a>';
         $listItems .= ' &bull; ';
-        $listItems .= '<a href = "/reviews/index.php?action=delete&reviewId='.$reviewId.'">Delete</a>';
+        $listItems .= '<a href = "/phpmotors/reviews/index.php?action=delete&reviewId='.urlencode($reviewId['reviewId']).'">Delete</a>';
         $listItems .= '</li>';
         return $listItems;
     }

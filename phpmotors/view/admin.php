@@ -43,6 +43,8 @@
                 <?php 
                     if(isset($_SESSION['message'])) {
                         echo $_SESSION['message'];
+                    } elseif(isset($message)) {
+                        echo $message;
                     }
                 ?>
             </div>
@@ -83,7 +85,7 @@
             </div>
 
             <h2 class="inv">Manage Your Product Reviews</h2>
-            <?php echo $vehicleName, $reviewDetails;?>
+            <?php echo $reviewDetails;?>
             
         </main>
 

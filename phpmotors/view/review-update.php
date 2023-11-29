@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PHP Motors Template">
-    <title>Update Review &bull; PHP Motors</title>
+    <title>Review Update&bull; PHP Motors</title>
     <link rel="shortcut icon" href="favicon.ico"> 
     <link rel="stylesheet" href="/phpmotors/css/base.css">
     <link rel="stylesheet" href="/phpmotors/css/medium.css">
@@ -48,10 +48,11 @@
                     }
                 ?> 
             </div>
+            
+            <?php echo "<h3 class='customerRev'>Review the $vehicleDetails[invMake] $vehicleDetails[invModel]</h3>"; ?>
+
             <form action="/phpmotors/reviews/index.php" method="POST" <?php if(!$_SESSION['loggedin']) { echo "hidden"; } ?>>
-                    <label for="regname">Registered name: <input type="text" name="clientFirstname" id="regname" <?php echo 'value="'.substr($review['clientFirstname'], 0, 1).". ".$review['clientFirstname'].'"';?> readonly></label>
-                    <label for="updatedReview">Review Posted on: <input type="text" name="reviewDate" id="updatedReview" <?php echo 'value="'.$review['reviewDate'].'"';?> readonly></label>
-                    <label for="editReview">Add Review: <textarea name="reviewText" id="editReview" cols="30" rows="10" required><?php echo $review['reviewText'];?></textarea></label>
+                    <label for="editReview">Update Review: <textarea name="reviewText" id="editReview" cols="30" rows="10" required><?php if(isset($review['reviewText'])) { echo $review['reviewText']; }?></textarea></label>
 
                     <button class="regbtn">Update Review</button>
                     <input type="hidden" name="action" value="editReview">
