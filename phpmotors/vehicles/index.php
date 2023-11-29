@@ -227,6 +227,8 @@
             //? Get the reviews displayed in the vehicle view.
             $reviews = getInvReviews($vehicleId);
 
+            // var_dump($reviews);
+
             $reviewDisplay = '<div class="displayReviews">';
             foreach($reviews as $review) {
                 $reviewDisplay .= buildReviewDisplay($review['clientFirstname'], $review['clientLastname'], $review['reviewDate'], $review['reviewText']);

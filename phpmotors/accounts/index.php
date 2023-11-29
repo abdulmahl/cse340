@@ -126,13 +126,6 @@
             // Store the array into the session
             $_SESSION['clientData'] = $clientData;
 
-            $vehicles = getVehicles();
-            $vehicleName = '<p>';
-            foreach($vehicles as $vehicle) {
-                $vehicleName .= "$vehicle[invMake] $vehicle[invModel]";
-            }
-            $vehicleName .= '</p>';
-
             // Get the list of reviews for the client.
             $reviews = getClientReviews($_SESSION['clientData']['clientId']);
             $reviewDetails = '<ul>';

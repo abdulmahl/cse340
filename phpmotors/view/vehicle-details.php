@@ -42,67 +42,72 @@
                     } 
                 ?>
             </div>
-        <?php echo "<h1 class='vHeader'> $vehicleDetails[invMake] $vehicleDetails[invModel]</h1>" ?>
-        <section class='vehicle-details'>
+            
+            <?php echo "<h1 class='vHeader'> $vehicleDetails[invMake] $vehicleDetails[invModel]</h1>" ?>
+            <section class='vehicle-details'>
 
-            <?php 
-                if(isset($thumbnailList)) {
-                    echo $thumbnailList;
+                <?php 
+                    if(isset($thumbnailList)) {
+                        echo $thumbnailList;
+                        }
+                ?>
+
+                <div class="imgDisplay">
+                    <?php echo "<img src='$vehicleDetails[invImage]' alt='$vehicleDetails[invMake]-$vehicleDetails[inModel]'>"; ?>
+                </div>
+
+                <?php if(isset($displayVehicleDetails)) {
+                    echo $displayVehicleDetails;
                     }
-            ?>
+                ?>
+            </section>
 
-            <div class="imgDisplay">
-                <?php echo "<img src='$vehicleDetails[invImage]' alt='$vehicleDetails[invMake]-$vehicleDetails[inModel]'>"; ?>
-            </div>
-
-            <?php if(isset($displayVehicleDetails)) {
-                echo $displayVehicleDetails;
-                }
-            ?>
             <br>
             <hr>
-            <?php 
-                if (!$_SESSION['loggedin']){
-                    echo '<p class="revLogin">Please <a href="/phpmotors/accounts/?action=login"><strong>login</strong></a> to leave a review.</p>';
-                }
-                if (isset($_SESSION['message'])) {
-                    echo $_SESSION['message'];
-                }
-            ?>
             
-            <h3 class="customerRev">CustomerReviews</h3>
-            <?php echo "<h3 class='customerRev'>Review the $vehicleDetails[invMake] $vehicleDetails[invModel]</h3>"; ?>
-
-            <div class="note1">
+            <div class="reviewsPart">
                 <?php 
-                    if(isset($message)) {
-                        echo $message;
-                    } 
+                    if (!$_SESSION['loggedin']){
+                        echo '<p class="revLogin">Please <a href="/phpmotors/accounts/?action=login"><strong>login</strong></a> to leave a review.</p>';
+                    }
+                    if (isset($_SESSION['message'])) {
+                        echo $_SESSION['message'];
+                    }
+                ?>
+                
+                <h3 class="customerRev">CustomerReviews</h3>
+                <?php if($_SESSION['loggedin']) echo "<h3 class='customerRev'>Review the $vehicleDetails[invMake] $vehicleDetails[invModel]</h3>"; ?>
+           
+                <div class="note1">
+                    <?php 
+                        if(isset($message)) {
+                            echo $message;
+                        } 
+                    ?>
+                </div>
+
+                <form action="/phpmotors/reviews/index.php" method="POST" <?php if (!$_SESSION['loggedin']){echo "hidden";} ?>>
+                    <?php
+                    $screenName = substr($_SESSION['clientData']['clientFirstname'], 0, 1) . $_SESSION['clientData']['clientLastname'];
+                    echo "<label><strong>Screen Name: </strong><input value='$screenName' readonly></label>";?>
+                    <label>Add a review: <textarea id="review" name="newReview" rows="4" cols="10" required></textarea></label>
+                    <br>
+                    <button class="regButton">Add Review</button>
+                    <br>
+                    <input type="hidden" name="action" value="addReview">
+                    <input type="hidden" name="clientId" <?php echo 'value="'.$_SESSION['clientData']['clientId'].'"'; ?>>
+                    <input type="hidden" name="vehicleId" <?php echo 'value="'.$vehicleId.'"'; ?>>
+                </form>
+
+                <?php
+                    if(isset($reviewDisplay )) {
+                        echo " $reviewDisplay";
+                    } else {
+                        echo "<p>Be the first to leave a review!</p>";
+                    }
                 ?>
             </div>
-
-            <form action="/phpmotors/reviews/index.php" method="POST" <?php if (!$_SESSION['loggedin']){echo "hidden";} ?>>
-                <?php
-                $screenName = substr($_SESSION['clientData']['clientFirstname'], 0, 1) . $_SESSION['clientData']['clientLastname'];
-                echo "<label><strong>Screen Name: </strong><input value='$screenName' readonly></label>";?>
-                <label>Add a review: <textarea id="review" name="newReview" rows="4" cols="10" required></textarea></label>
-                <br>
-                <button class="regButton">Add Review</button>
-                <br>
-                <input type="hidden" name="action" value="addReview">
-                <input type="hidden" name="clientId" <?php echo 'value="'.$_SESSION['clientData']['clientId'].'"'; ?>>
-                <input type="hidden" name="vehicleId" <?php echo 'value="'.$vehicleId.'"'; ?>>
-            </form>
-
-            <?php
-                if(isset($reviewDisplay )) {
-                    echo " $reviewDisplay";
-                } else {
-                    echo "<p>Be the first to leave a review!</p>";
-                }
-            ?>
                     
-        </section>
 
 
         </main>
