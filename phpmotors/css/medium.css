@@ -294,6 +294,22 @@
         width: 20%;
     }
 
+    .addRevDiv {
+        margin-right: auto;
+    }
+
+    h3.customerRev {
+        font-size: 1.7rem;
+    }
+    
+    h3.customerV {
+        font-size: 2rem;
+    }
+
+    div.displayReviews {
+        font-size: 1.5rem;
+    }
+
     footer p {
         font-size: 1.1rem;
     }

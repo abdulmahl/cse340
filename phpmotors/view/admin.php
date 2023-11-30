@@ -84,9 +84,13 @@
                 </div>
             </div>
 
-            <h2 class="inv">Manage Your Product Reviews</h2>
-            <?php echo $reviewDetails;?>
-            
+            <div class="manReviews">
+                <h2 class="inv">Manage Your Product Reviews</h2>
+                <?php
+                    echo $reviewDetails;
+                ?>
+            </div>
+           
         </main>
 
         <footer>

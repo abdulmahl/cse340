@@ -74,34 +74,42 @@
                         echo $_SESSION['message'];
                     }
                 ?>
-                
-                <h3 class="customerRev">CustomerReviews</h3>
-                <?php if($_SESSION['loggedin']) echo "<h3 class='customerRev'>Review the $vehicleDetails[invMake] $vehicleDetails[invModel]</h3>"; ?>
 
-                <form action="/phpmotors/reviews/index.php" method="POST" <?php if (!$_SESSION['loggedin']){echo "hidden";} ?>>
+                <div class="formDiv">
+                    <h3 class="customerRev">CustomerReviews</h3>
+                    <?php if($_SESSION['loggedin']) echo "<h3 class='customerV'>Review the $vehicleDetails[invMake] $vehicleDetails[invModel]</h3>"; ?>
+
+                    <form action="/phpmotors/reviews/index.php" method="POST" <?php if (!$_SESSION['loggedin']){echo "hidden";} ?>>
+                        <div class="addRevDiv">
+                            <?php
+                                $screenName = substr($_SESSION['clientData']['clientFirstname'], 0, 1) . $_SESSION['clientData']['clientLastname'];
+                                echo "<label><strong>Name as Displayed: </strong><input value='$screenName' readonly></label>";
+                            ?>
+                            <label for="review">Add a review: <textarea id="review" name="reviewText" rows="10" cols="10" required></textarea></label>
+                            <br>
+                            <button class="regButton" value="">Add Review</button>
+                            <br>
+                            <input type="hidden" name="action" value="addReview">
+                            <input type="hidden" name="clientId" <?php echo 'value="'.$_SESSION['clientData']['clientId'].'"'; ?>>
+                            <input type="hidden" name="vehicleId" <?php echo "value='$vehicleId'"; ?>>
+                        </div>
+                    </form>
+                </div>
+
+                <hr>
+
+                <div class="displayReviews">
                     <?php
-                    $screenName = substr($_SESSION['clientData']['clientFirstname'], 0, 1) . $_SESSION['clientData']['clientLastname'];
-                    echo "<label><strong>Screen Name: </strong><input value='$screenName' readonly></label>";?>
-                    <label for="review">Add a review: <textarea id="review" name="newReview" rows="4" cols="10" required></textarea></label>
-                    <br>
-                    <button class="regButton">Add Review</button>
-                    <br>
-                    <input type="hidden" name="action" value="addReview">
-                    <input type="hidden" name="clientId" <?php echo 'value="'.$_SESSION['clientData']['clientId'].'"'; ?>>
-                    <input type="hidden" name="vehicleId" <?php echo 'value="'.$vehicleId.'"'; ?>>
-                </form>
+                        if(isset($reviewDisplay)) {
+                            echo $reviewDisplay; 
+                        } else { 
+                            echo "<p class='firstRev'>Be the first to leave a review!</p>";
+                        }
+                    ?>
+                </div>
 
-                <?php
-                    if(isset($reviewDisplay )) {
-                        echo " $reviewDisplay";
-                    } else {
-                        echo "<p>Be the first to leave a review!</p>";
-                    }
-                ?>
             </div>
-                    
-
-
+                
         </main>
 
         <footer>

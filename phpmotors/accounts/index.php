@@ -18,8 +18,6 @@
 
     require_once '../model/reviews-model.php';
 
-    require_once '../model/vehicles-model.php';
-
     //? Get the array classifications.
     $classifications = getClassifications();
 
@@ -125,6 +123,14 @@
             array_pop($clientData);
             // Store the array into the session
             $_SESSION['clientData'] = $clientData;
+
+            // ? Call function into the case to use as needed!
+            // $vehicles = getVehicles();
+            // foreach($vehicles as $vehicle) {
+            //     $vbrand .= getVehicleBrand($vehicles);
+            //     $vbrand .= "$vehicle[invMake] $vehicle[invModel]";
+            // }
+            // echo $vbrand;
 
             // Get the list of reviews for the client.
             $reviews = getClientReviews($_SESSION['clientData']['clientId']);

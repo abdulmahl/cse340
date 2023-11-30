@@ -863,19 +863,29 @@ section.vehicle-details {
     margin: 0 .5rem 0 0;
 }
 
-p.displayRevs {
-    display: flex;
+div.displayReviews {
     padding: 1rem .3rem;
     background-color: var(--blue2);
     margin: .5rem 0;
+    font-size: 1.3rem;
+}
+
+.firstRev {
+    padding: 0 .3rem;
+    font-size: 1.3rem;
 }
 
 p.revLogin {
     padding: .7rem .3rem 0;
 }
 
-h3.customerRev {
+h3.customerRev, h3.customerV {
     padding: .3rem;
+    text-align: center;
+}
+
+h3.customerV {
+    font-size: 1.5rem;
 }
 
 p.revLogin a {
@@ -889,4 +899,8 @@ p.revLogin a:hover {
     background: var(--gray3);
     padding: 0 .3rem;
     transition: all 1s ease;
+}
+
+.formDiv {
+    padding-top: 1rem;
 }

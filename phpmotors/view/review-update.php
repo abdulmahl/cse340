@@ -52,11 +52,11 @@
             <?php echo "<h3 class='customerRev'>Review the $vehicleDetails[invMake] $vehicleDetails[invModel]</h3>"; ?>
 
             <form action="/phpmotors/reviews/index.php" method="POST" <?php if(!$_SESSION['loggedin']) { echo "hidden"; } ?>>
-                    <label for="editReview">Update Review: <textarea name="edit" id="editReview" cols="30" rows="10" required><?php if(isset($reviewText)) { echo "value='$reviewText'"; }?></textarea></label>
+                    <label for="editReview">Update Review:<textarea id="editReview" name="reviewText" cols="30" rows="10" required ><?php echo $reviewText ?></textarea></label>
 
                     <button class="regbtn">Update Review</button>
-                    <input type="hidden" name="action" value="editReview">
-                    <input type="hidden" name="reviewId" <?php echo 'value="'.$reviewId.'"'; ?>>
+                    <input type="hidden" name="action" value="updateReview">
+                    <input type="hidden" name="reviewId" <?php echo "value='$reviewId'"; ?>>
             </form>
         </main>
 

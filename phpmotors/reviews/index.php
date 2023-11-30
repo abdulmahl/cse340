@@ -18,7 +18,6 @@
     //? Bring the reviews model into the scope.
     require_once '../model/reviews-model.php';
 
-    require_once '../model/vehicles-model.php';
 
     //? Get the array classifications.
     $classifications = getClassifications();
@@ -37,24 +36,23 @@
     switch ($action) {
         case 'addReview':
             // Get and filter all the needed input.
-            $newReview = filter_input(INPUT_POST, 'newReview', FILTER_SANITIZE_STRING);
+            $reviewText = filter_input(INPUT_POST, 'reviewText', FILTER_SANITIZE_STRING);
             $clientId = filter_input(INPUT_POST, 'clientId', FILTER_SANITIZE_NUMBER_INT);
             $vehicleId = filter_input(INPUT_POST, 'vehicleId', FILTER_SANITIZE_NUMBER_INT);
 
             // Check for any missing input data.
-            if(empty($newReview) || empty($clientId) || empty($vehicleId)) {
+            if(empty($reviewText) || empty($clientId) || empty($vehicleId)) {
                 $_SESSION['message'] = '<p>Please provide information for all empty form fields.</p>';
                 include '../view/vehicle-details.php';
                 exit;
             }
 
             // Send data  to the model.
-            $newReviewOutcome = addReview($newReview, $clientId, $vehicleId);
+            $newReviewOutcome = addReview($reviewText, $clientId, $vehicleId);
 
             if($newReviewOutcome === 1) {
-                echo "Successfully added review!";
                 $_SESSION['message'] = '<p>Review added successfully!</p>';
-                header('Location: /phpmotors/accounts');
+                header('Location: /phpmotors/accounts/');
                 exit;
             } else {
                 $_SESSION['message'] = '<p>Sorry, review not added. Please try again!</p>';
@@ -63,7 +61,19 @@
             }
             break;
 
-        case 'editReview':
+        case 'edit':
+            // Get and filter input.
+            $reviewId = filter_input(INPUT_POST, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
+            
+            // Get review details.
+            $review = getReview($reviewId);
+            // echo "This, $review";
+
+            // Include the view to edit 
+            include '../view/review-update.php';
+            break;
+
+        case 'updateReview':
             // Get and filter input.
             $reviewText = filter_input(INPUT_POST, 'reviewText', FILTER_SANITIZE_STRING);
             $reviewId = filter_input(INPUT_POST, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
@@ -80,7 +90,7 @@
 
             //Check and report the outcome of the update.
             if($reviewUpdateOutcome === 1) {
-                $_SEESSION['message'] = '<p>Review update was a success!</p>';
+                $_SESSION['message'] = '<p>Review update was a success!</p>';
             } else {
                 $_SESSION['message'] = "<p>Sorry, update did not occure. Please try again!</p>";
             }
@@ -89,15 +99,13 @@
             exit;
             break;
 
-        case 'edit':
+        case 'delete':
             // Get and filter input.
-            $reviewId = filter_input(INPUT_POST, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
-            
-            // Get review details.
+            $reviewId = filter_input(INPUT_GET, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
+
             $review = getReview($reviewId);
 
-            // Include the view to edit 
-            include '../view/review-update.php';
+            include '../view/delete-review.php';
             break;
 
         case 'deleteReview':
@@ -114,15 +122,6 @@
 
             header('Location: /phpmotors/accounts/');
             exit;
-            break;
-
-        case 'delete':
-            // Get and filter input.
-            $reviewId = filter_input(INPUT_GET, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
-
-            $review = getReview($reviewId);
-
-            include '../view/delete-review.php';
             break;
 
         default:

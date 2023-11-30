@@ -50,7 +50,7 @@
             </div>
 
             <form action="/phpmotors/reviews/index.php" method="POST" <?php if(!$_SESSION['loggedin']) { echo "hidden"; } ?>>
-                    <label for="editReview">Delete Review: <textarea name="delete" id="editReview" cols="30" rows="10" readonly><?php if(isset($reviewText)) { echo "value='$reviewText'"; } ?></textarea></label>
+                    <label for="editReview">Delete Review: <textarea name="reviewText" id="editReview" cols="30" rows="10" readonly><?php if(isset($reviewText)) { echo $reviewText; } elseif(isset($review['reviewText'])) { echo $review['reviewText'];} ?></textarea></label>
                     <input type="submit" name="submit" id="regbtn" value="Delete Review">
                     <input type="hidden" name="action" value="deleteReview">
                     <input type="hidden" name="reviewId" <?php echo 'value="'.$reviewId.'"' ?>>

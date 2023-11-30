@@ -252,13 +252,11 @@
     //? The function builds a display for reviews and returns them as HTML.
     //? Called in the vehicles controller.
     function buildReviewDisplay($clientFirstName, $clientLastName, $reviewDate, $reviewText){
-        $reviewDetails = "<p class='displayRevs'>";
         $reviewDetails .= substr($clientFirstName, 0, 1).". ".$clientLastName;
+        $reviewDetails .= "<br>$reviewText";
         $timestamp = strtotime($reviewDate);
         $day = date('M/d/Y @ H:i:s', $timestamp);
-        $reviewDetails .= "<br>Wrote on: ($day)";
-        $reviewDetails .= "<br>".$reviewText;
-        $reviewDetails .= "</p>";
+        $reviewDetails .= "<br>Reviewed On: ($day)";
         return $reviewDetails;
     }
 

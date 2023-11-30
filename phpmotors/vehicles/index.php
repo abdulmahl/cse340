@@ -229,11 +229,10 @@
 
             // var_dump($reviews);
 
-            $reviewDisplay = '<div class="displayReviews">';
+            //? Display reviews on the vehicle details page! 
             foreach($reviews as $review) {
                 $reviewDisplay .= buildReviewDisplay($review['clientFirstname'], $review['clientLastname'], $review['reviewDate'], $review['reviewText']);
             }
-            $reviewDisplay .= '</div>';
 
             if(empty($vehicleDetails)) {
                 $message = '<p> Sorry, no such vehicle exists.</p>';
