@@ -124,19 +124,16 @@
             // Store the array into the session
             $_SESSION['clientData'] = $clientData;
 
-            // ? Call function into the case to use as needed!
-            // $vehicles = getVehicles();
-            // foreach($vehicles as $vehicle) {
-            //     $vbrand .= getVehicleBrand($vehicles);
-            //     $vbrand .= "$vehicle[invMake] $vehicle[invModel]";
-            // }
-            // echo $vbrand;
-
             // Get the list of reviews for the client.
+            echo $_SESSION['clientData']['clientId'];
+            echo "<br>";
+            echo gettype($_SESSION['clientData']['clientId']);
+            exit;
             $reviews = getClientReviews($_SESSION['clientData']['clientId']);
+            
             $reviewDetails = '<ul>';
             foreach($reviews as $review){
-                $reviewDetails .= buildListItem($review['reviewDate'], $review['reviewId']);
+                $reviewDetails .= buildListItem($review);
             }
             $reviewDetails .= '</ul>';
 
@@ -249,11 +246,10 @@
         break;
 
         default:
-            // Get the list of reviews for the client.
             $reviews = getClientReviews($_SESSION['clientData']['clientId']);
             $reviewDetails = '<ul>';
             foreach($reviews as $review){
-                $reviewDetails .= buildListItem($review['reviewDate'], $review['reviewId']);
+                $reviewDetails .= buildListItem($review);
             }
             $reviewDetails .= '</ul>';
             include '../view/admin.php';

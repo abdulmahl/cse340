@@ -63,11 +63,10 @@
 
         case 'edit':
             // Get and filter input.
-            $reviewId = filter_input(INPUT_POST, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
+            $reviewId = filter_input(INPUT_GET, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
             
             // Get review details.
             $review = getReview($reviewId);
-            // echo "This, $review";
 
             // Include the view to edit 
             include '../view/review-update.php';

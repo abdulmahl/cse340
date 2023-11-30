@@ -30,7 +30,7 @@
     //? This function will get all the client reviews.
     function getClientReviews($clientId){
         $db = phpmotorsConnect();
-        $sql = 'SELECT reviewId, reviewText, reviewDate, invId, clientId FROM reviews WHERE clientId = :clientId';
+        $sql = 'SELECT reviewId, reviewText, reviewDate, reviews.invId, reviews.clientId, inventory.invMake, inventory.invModel FROM reviews JOIN inventory JOIN clients ON reviews.invId = inventory.invId AND reviews.clientId = clients.clientId WHERE reviews.invId = inventory.invId AND reviews.clientId = :clientId';
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':clientId', $clientId, PDO::PARAM_INT);
         $stmt->execute();
@@ -42,11 +42,11 @@
     //? This function will each review by it's id.
     function getReview($reviewId){
         $db = phpmotorsConnect();
-        $sql = 'SELECT r.reviewId, r.reviewText, r.reviewDate, r.invId, r.clientId, c.clientFirstname, c.clientLastname FROM reviews r INNER JOIN clients c ON c.clientId = r.clientId WHERE r.reviewId = :reviewId';
+        $sql = 'SELECT r.reviewId, r.reviewText, r.reviewDate, r.invId, r.clientId, c.clientFirstname, c.clientLastname FROM reviews r INNER JOIN clients c WHERE r.reviewId = :reviewId';
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':reviewId', $reviewId, PDO::PARAM_INT);
         $stmt->execute();
-        $review = $stmt->fetch(PDO::FETCH_ASSOC);
+        $review = $stmt->fetch();
         $stmt->closeCursor();
         return $review;
     }
