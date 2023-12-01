@@ -513,11 +513,13 @@ a.welcome:hover {
 
 .log-in {
     padding: .5rem;
+    font-size: 1.5rem;
 }
 
 .credentials {
-    margin-left: 3rem;
+    margin-left: 2rem;
     padding: .5rem 0;
+    font-size: 1.3rem;
 }
 
 #show-password {
@@ -903,4 +905,26 @@ p.revLogin a:hover {
 
 .formDiv {
     padding-top: 1rem;
+}
+
+.revList {
+    margin-left: 2rem;
+    padding: .5rem .3rem;
+    background-color: var(--blue2);
+    font-size: 1.3rem;
+    margin: .7rem 0;
+    list-style: none;
+}
+
+.revList a {
+    color: var(--gray1);
+}
+
+.revList a:hover {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.inv-man {
+    padding-bottom: 1rem;
 }

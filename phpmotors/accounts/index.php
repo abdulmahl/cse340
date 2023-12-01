@@ -124,13 +124,8 @@
             // Store the array into the session
             $_SESSION['clientData'] = $clientData;
 
-            // Get the list of reviews for the client.
-            echo $_SESSION['clientData']['clientId'];
-            echo "<br>";
-            echo gettype($_SESSION['clientData']['clientId']);
-            exit;
+            // Get the list of reviews for the client using clientId.
             $reviews = getClientReviews($_SESSION['clientData']['clientId']);
-            
             $reviewDetails = '<ul>';
             foreach($reviews as $review){
                 $reviewDetails .= buildListItem($review);

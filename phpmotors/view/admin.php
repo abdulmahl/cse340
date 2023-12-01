@@ -48,13 +48,14 @@
                     }
                 ?>
             </div>
-
+            <hr>
             <h1 class="fullname">
                 <?php
                     echo $_SESSION['clientData']['clientFirstname'].' '.$_SESSION['clientData']['clientLastname'];
                 ?>
             </h1>
 
+            <hr>
             <p class="log-in">You are Logged in.</p>
             <ul class="loggedin-list">
                 <li class="credentials"> First Name: <?php echo $_SESSION['clientData']['clientFirstname']; ?></li>
@@ -62,6 +63,7 @@
                 <li class="credentials"> Email: <?php echo $_SESSION['clientData']['clientEmail']; ?></li>
             </ul>
 
+            <hr>
             <div class="acc-inv-container">
                 <div class="acc-man">
                     <?php 
@@ -84,6 +86,7 @@
                 </div>
             </div>
 
+            <hr>
             <div class="manReviews">
                 <h2 class="inv">Manage Your Product Reviews</h2>
                 <?php

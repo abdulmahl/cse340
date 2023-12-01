@@ -263,14 +263,14 @@
     //? The function builds display as HTML and returns a list of items.
     //? Called in accounts controller!
     function buildListItem($reviewList) {
-        $listItems = '<li class=credentials>';
+        $listItems = '<li class=revList>';
         $timestamp = strtotime($reviewList['reviewDate']);
         $day = date('M/d/Y @ H:i:s', $timestamp);
         $listItems .= "$reviewList[invMake] $reviewList[invModel]";
-        $listItems .= "(Reviewed on: $day) ";
-        $listItems .= '<a href = "/phpmotors/reviews/index.php?action=edit&reviewId='.urlencode($reviewList['reviewId']).'">Edit</a>';
+        $listItems .= " (Reviewed on: $day) ";
+        $listItems .= '<a href = "/phpmotors/reviews/index.php?action=edit&reviewId='.urlencode($reviewList['reviewId']).'">Edit Review</a>';
         $listItems .= ' &bull; ';
-        $listItems .= '<a href = "/phpmotors/reviews/index.php?action=delete&reviewId='.urlencode($reviewList['reviewId']).'">Delete</a>';
+        $listItems .= '<a href = "/phpmotors/reviews/index.php?action=delete&reviewId='.urlencode($reviewList['reviewId']).'">Delete Review</a>';
         $listItems .= '</li>';
         return $listItems;
     }
