@@ -38,26 +38,32 @@
         </nav>
 
         <main>
-            <h1 class="">Update Review</h1>
-            <p class="">Update your review</p>
+            <section class="editDiv">
 
-            <div class="note"> 
-                <?php
-                    if(isset($message)) { 
-                        echo $message;
-                    }
-                ?> 
-            </div>
-            
-            <?php echo "<h3 class='customerRev'>Review the $vehicleDetails[invMake] $vehicleDetails[invModel]</h3>"; ?>
+                <div class="revUp">
+                    <h1 class="">Update Review</h1>
+                </div>
+                
+                <div class="note"> 
+                    <?php
+                        if(isset($message)) { 
+                            echo $message;
+                        }
+                    ?> 
+                </div>
+                
+                <form action="/phpmotors/reviews/index.php" method="POST" <?php if(!$_SESSION['loggedin']) { echo "hidden"; } ?>>
+                    <label class="editReview" for="editReview">Update Your Review:<textarea id="editReview" name="reviewText" cols="30" rows="10" required ><?php echo $review['reviewText'] ?></textarea></label>
 
-            <form action="/phpmotors/reviews/index.php" method="POST" <?php if(!$_SESSION['loggedin']) { echo "hidden"; } ?>>
-                    <label for="editReview">Update Review:<textarea id="editReview" name="reviewText" cols="30" rows="10" required ><?php echo $review['reviewText'] ?></textarea></label>
-
-                    <button class="regbtn">Update Review</button>
+                    <br>
+                    <button type="submit" class="regButton">Update Review</button>
+                    <br>
                     <input type="hidden" name="action" value="updateReview">
                     <input type="hidden" name="reviewId" <?php echo "value='$reviewId'"; ?>>
-            </form>
+                </form>
+
+            </section>
+
         </main>
 
         <footer>

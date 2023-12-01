@@ -207,4 +207,18 @@
     .rightPart {
         gap: 2.4rem;
     }
+
+    .addRevDiv, .editDiv {
+        width: 65%;
+        margin: 0 auto;
+    }
+
+    textarea#editReview, .editReview {
+        font-size: 1.2rem;
+    }
+
+    div.revUp {
+        background: none;
+        font-size: 2rem;
+    }
 }

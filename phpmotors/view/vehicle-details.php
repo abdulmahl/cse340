@@ -76,7 +76,7 @@
                 ?>
 
                 <div class="formDiv">
-                    <h3 class="customerRev">CustomerReviews</h3>
+                    <h3 class="customerRev">Customer Reviews</h3>
                     <?php if($_SESSION['loggedin']) echo "<h3 class='customerV'>Review the $vehicleDetails[invMake] $vehicleDetails[invModel]</h3>"; ?>
 
                     <form action="/phpmotors/reviews/index.php" method="POST" <?php if (!$_SESSION['loggedin']){echo "hidden";} ?>>

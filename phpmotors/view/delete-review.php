@@ -38,24 +38,31 @@
         </nav>
 
         <main>
-            <h1 class="">Delete Review</h1>
-            <p class="">This action cannot be undone.</p>
 
-            <div class="note"> 
-            <?php 
-                if(isset($message)) { 
-                    echo $message; 
-                }
-            ?> 
-            </div>
+            <section class="editDiv">
+                <div class="revUp">
+                    <h1 class="">Delete Review</h1>
+                    <p class="redDel">This action <strong>CANNOT</strong> be undone.</p>
+                </div>
+            
+                <div class="note"> 
+                <?php 
+                    if(isset($message)) { 
+                        echo $message; 
+                    }
+                ?> 
+                </div>
 
-            <form action="/phpmotors/reviews/index.php" method="POST" <?php if(!$_SESSION['loggedin']) { echo "hidden"; } ?>>
-                    <label for="editReview">Delete Review: <textarea name="reviewText" id="editReview" cols="30" rows="10" readonly><?php if(isset($reviewText)) { echo $reviewText; } elseif(isset($review['reviewText'])) { echo $review['reviewText'];} ?></textarea></label>
-                    <input type="submit" name="submit" id="regbtn" value="Delete Review">
+                <form action="/phpmotors/reviews/index.php" method="POST" <?php if(!$_SESSION['loggedin']) { echo "hidden"; } ?>>
+                    <label class="editReview" for="editReview">Delete This Review: <textarea name="reviewText" id="editReview" cols="30" rows="10" readonly><?php if(isset($reviewText)) { echo $reviewText; } elseif(isset($review['reviewText'])) { echo $review['reviewText'];} ?></textarea></label>
+                    <br>
+                    <button type="submit" name="submit" class="regButton">Delete Review</button>
+                    <br>
                     <input type="hidden" name="action" value="deleteReview">
                     <input type="hidden" name="reviewId" <?php echo 'value="'.$reviewId.'"' ?>>
-            </form>
-
+                </form>
+            </section>
+    
         </main>
 
         <footer>

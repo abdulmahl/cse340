@@ -313,4 +313,8 @@
     footer p {
         font-size: 1.1rem;
     }
+
+    label.editReview {
+        width: 60%;
+    }
 }

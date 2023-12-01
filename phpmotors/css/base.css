@@ -866,9 +866,6 @@ section.vehicle-details {
 }
 
 div.displayReviews {
-    padding: 1rem .3rem;
-    background-color: var(--blue2);
-    margin: .5rem 0;
     font-size: 1.3rem;
 }
 
@@ -927,4 +924,23 @@ p.revLogin a:hover {
 
 .inv-man {
     padding-bottom: 1rem;
+}
+
+.disList {
+    list-style: none;
+    margin: 1rem 0;
+    background-color: var(--blue2);
+    padding: .5rem .3rem;
+}
+
+section .revUp {
+    text-align: center;
+    padding: 1rem;
+    margin: .3rem .11rem;
+    background: var(--blue2);
+    color: var(--gray1);
+}
+
+.redDel {
+    color: #ff0000;
 }
