@@ -254,11 +254,11 @@
     function buildReviewDisplay($clientFirstName, $clientLastName, $reviewDate, $reviewText){
         $reviewName .=  substr($clientFirstName, 0, 1).". ".$clientLastName;
         $reviewDetails .= '<li class="disList">';
-        $reviewDetails .= "<p>$reviewName</p>";
-        $reviewDetails .= "<p>$reviewText </p>";
-        $timestamp .= strtotime($reviewDate);
+        $reviewDetails .= "<p class=r-name>$reviewName</p>";
         $day = date('M/d/Y @ H:i:s', $timestamp);
-        $reviewDetails .= "<p>Reviewed On: ($day)</p>";
+        $reviewDetails .= "<p class=r-name>Wrote On: ($day)</p>";
+        $reviewDetails .= "<p class='whiteBack'>$reviewText </p>";
+        $timestamp .= strtotime($reviewDate);
         $reviewDetails .= '</li>';
         return $reviewDetails;
     }
