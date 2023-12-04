@@ -905,7 +905,6 @@ p.revLogin a:hover {
 }
 
 .revList {
-    margin-left: 2rem;
     padding: .5rem .3rem;
     background-color: var(--blue2);
     font-size: 1.3rem;
@@ -942,7 +941,12 @@ section .revUp {
 }
 
 .redDel {
-    color: #ff0000;
+    /* color: #ff0000; */
+}
+
+.greenEdit:hover {
+    color: #008000;
+    background: var(--white);
 }
 
 p.whiteBack {
@@ -954,4 +958,8 @@ p.whiteBack {
 
 p.r-name {
     padding: 0 1rem;
+}
+
+.revUp h1 {
+    /* text-wrap: balance; */
 }

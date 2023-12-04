@@ -221,4 +221,9 @@
         background: none;
         font-size: 2rem;
     }
+
+    section .revUp {
+        background: var(--blue2);
+        width: 100%;
+    }
 }

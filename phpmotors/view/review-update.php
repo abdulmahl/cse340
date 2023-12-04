@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PHP Motors Template">
-    <title>Review Update &bull; PHP Motors</title>
+    <title>Update <?php echo $invName; ?> Review &bull; PHP Motors</title>
     <link rel="shortcut icon" href="favicon.ico"> 
     <link rel="stylesheet" href="/phpmotors/css/base.css">
     <link rel="stylesheet" href="/phpmotors/css/medium.css">
