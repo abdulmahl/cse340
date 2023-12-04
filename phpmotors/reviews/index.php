@@ -17,6 +17,8 @@
 
     //? Bring the reviews model into the scope.
     require_once '../model/reviews-model.php';
+    require_once '../model/vehicles-model.php';
+
 
 
     //? Get the array classifications.
@@ -68,6 +70,9 @@
             // Get review details.
             $review = getReview($reviewId);
 
+            // Get the inventory make and model.
+            $invName = "$review[invMake] $review[invModel]";
+
             // Include the view to edit 
             include '../view/review-update.php';
             break;
@@ -89,7 +94,7 @@
 
             //Check and report the outcome of the update.
             if($reviewUpdateOutcome === 1) {
-                $_SESSION['message'] = '<p>Review update was a success!</p>';
+                $_SESSION['message'] = "<p>Review update was a success!</p>";
             } else {
                 $_SESSION['message'] = "<p>Sorry, update did not occure. Please try again!</p>";
             }
@@ -102,7 +107,11 @@
             // Get and filter input.
             $reviewId = filter_input(INPUT_GET, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
 
+            // Get review details.
             $review = getReview($reviewId);
+
+            // Get the inventory make and model.
+            $invName = "$review[invMake] $review[invModel]";
 
             include '../view/delete-review.php';
             break;

@@ -41,7 +41,7 @@
 
             <section class="editDiv">
                 <div class="revUp">
-                    <h1 class="">Delete Review</h1>
+                    <h1 class="">Delete <?php echo $invName; ?> Review</h1>
                     <p class="redDel">This action <strong>CANNOT</strong> be undone.</p>
                 </div>
             

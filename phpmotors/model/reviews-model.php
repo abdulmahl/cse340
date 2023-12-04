@@ -42,7 +42,7 @@
     //? This function will each review by it's id.
     function getReview($reviewId){
         $db = phpmotorsConnect();
-        $sql = 'SELECT r.reviewId, r.reviewText, r.reviewDate, r.invId, r.clientId, c.clientFirstname, c.clientLastname FROM reviews r INNER JOIN clients c WHERE r.reviewId = :reviewId';
+        $sql = 'SELECT r.reviewId, r.reviewText, r.reviewDate, r.invId, r.clientId, c.clientFirstname, c.clientLastname, i.invMake, i.invModel FROM reviews r INNER JOIN inventory i INNER JOIN clients c ON r.invId = i.invId AND r.clientId = c.clientid WHERE r.invId = i.invId AND r.reviewId = :reviewId';
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':reviewId', $reviewId, PDO::PARAM_INT);
         $stmt->execute();

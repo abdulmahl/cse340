@@ -77,6 +77,15 @@
 
                 <div class="formDiv">
                     <h3 class="customerRev">Customer Reviews</h3>
+
+                    <div class="note1">
+                        <?php 
+                            if(isset($message)) {
+                                echo $message;
+                            } 
+                        ?>
+                    </div>
+
                     <?php if($_SESSION['loggedin']) echo "<h3 class='customerV'>Review the $vehicleDetails[invMake] $vehicleDetails[invModel]</h3>"; ?>
 
                     <form action="/phpmotors/reviews/index.php" method="POST" <?php if (!$_SESSION['loggedin']){echo "hidden";} ?>>
@@ -103,7 +112,7 @@
                         if(isset($reviewDisplay)) {
                             echo $reviewDisplay; 
                         } else { 
-                            echo "<p class='firstRev'>Be the first to leave a review!</p>";
+                            echo "<p class='firstRev'>Be the first to leave a review the $vehicleDetails[invMake] $vehicleDetails[invModel]!</p>";
                         }
                     ?>
                 </div>

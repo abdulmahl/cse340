@@ -879,7 +879,7 @@ p.revLogin {
 }
 
 h3.customerRev, h3.customerV {
-    padding: .3rem;
+    padding: .3rem 0;
     text-align: center;
 }
 
