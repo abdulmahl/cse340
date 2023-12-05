@@ -43,7 +43,7 @@
                 ?>
             </div>
             
-            <?php echo "<h1 class='vHeader'> $vehicleDetails[invMake] $vehicleDetails[invModel]</h1>" ?>
+            <?php echo "<h1 class='vHeader'> $vehicleDetails[invMake] $vehicleDetails[invModel] Detailed:</h1>" ?>
             <section class='vehicle-details'>
 
                 <?php 
@@ -106,7 +106,13 @@
                     ?>
                 </div>
 
-                <h3 class="customerRev">Customer Reviews</h3>
+                <?php 
+                    if(!isset($reviewDisplay)) {
+                        echo ''; 
+                    } elseif(isset($reviewDisplay)) {
+                        echo '<h3 class="customerRev">Customer Reviews</h3>';
+                    } 
+                ?> 
 
                 <div class="displayReviews">
                     <?php

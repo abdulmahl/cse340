@@ -951,7 +951,7 @@ section .revUp {
 
 p.whiteBack {
     background: white;
-    padding: 0 1rem;
+    padding: 1rem;
     border: 6px solid var(--blue1);
     border-radius: 1rem;
 }
