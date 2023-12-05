@@ -56,7 +56,7 @@
             </h1>
 
             <hr>
-            <p class="log-in">You are Logged in.</p>
+            <p class="log-in">You are Logged in as:</p>
             <ul class="loggedin-list">
                 <li class="credentials"> First Name: <?php echo $_SESSION['clientData']['clientFirstname']; ?></li>
                 <li class="credentials"> Last Name: <?php echo $_SESSION['clientData']['clientLastname']; ?></li>

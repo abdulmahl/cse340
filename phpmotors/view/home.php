@@ -49,7 +49,7 @@
                 <img src="/phpmotors/images/vehicles/DeLorean-org.jpg" alt="delorean-image" id="heroImage">
 
                 <div class="ownWrapper">
-                    <a href="/phpmotors/vehicles/?action=classification&classificationName=Classic" class="ownToday">Own Today</a>
+                    <a href="http://localhost/phpmotors/vehicles/?action=vehicleDisplay&vehicle=18" class="ownToday">Own Today</a>
                 </div>
             </div>
 

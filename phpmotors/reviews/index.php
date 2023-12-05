@@ -19,8 +19,6 @@
     require_once '../model/reviews-model.php';
     require_once '../model/vehicles-model.php';
 
-
-
     //? Get the array classifications.
     $classifications = getClassifications();
 
