@@ -114,7 +114,7 @@
                     } 
                 ?> 
 
-                <div class="displayReviews">
+                <ul class="displayReviews">
                     <?php
                         if(isset($reviewDisplay)) {
                             echo $reviewDisplay; 
@@ -122,7 +122,7 @@
                             echo "<p class='firstRev'>Be the first to leave a review the $vehicleDetails[invMake] $vehicleDetails[invModel]!</p>";
                         }
                     ?>
-                </div>
+                </ul>
 
             </div>
                 
