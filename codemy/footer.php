@@ -1,3 +1,3 @@
 <?php 
-	echo "Copyright (c) " . $company_name . " " . date("Y") . " - All Rights Reserved";
+	echo "Copyright &COPY; " . $company_name . " " . date("Y") . " - All Rights Reserved";
 ?>
